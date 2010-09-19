@@ -5,6 +5,7 @@ package com.rgs.txt
 	public class Message extends Sprite
 	{
 		private var _index						: uint;
+		private var _active						: Boolean;
 		private var _address					: String;
 		private var _text						: String;
 		public var shortMessage					: String;
@@ -16,40 +17,27 @@ package com.rgs.txt
 		
 		public function Message()
 		{
-//			address = adr;
-//			message = msg;
-//			if (message.length <= 25) 
-//			{ 
-//				shortMessage = message;
-//			} 
-//			else
-//			{
-//				shortMessage = message.substr(0, 24) + "…";
-//			}
-//			timestamp = tms;
-//			date = makeDate();
+			active = false;
 		}
-		
-		/*
-		public function init(address:String, message:String, timestamp:String):void
-		{
-		address = address;
-		message = message;
-		timestamp = timestamp;
-		date = makeDate();
-		}
-		*/
-		
-		
 		
 		override public function toString():String
 		{
 			return "[ Message " + _index + " ::: " + shortMessage + ", " + _address + ", " + _timestamp + " ]";
 		}
 		
+		public function get address():String
+		{
+			return _address;
+		}
+		
 		public function set address(val:String):void
 		{
 			_address = val;
+		}
+		
+		public function get text():String
+		{
+			return _text;
 		}
 		
 		public function set text(val:String):void
@@ -63,6 +51,11 @@ package com.rgs.txt
 			{
 				shortMessage = _text.substr(0, 24) + "…";
 			}
+		}
+		
+		public function get timestamp():String 
+		{
+			return _timestamp;
 		}
 		
 		public function set timestamp(val:String):void
@@ -79,9 +72,25 @@ package com.rgs.txt
 			return new Date(_day + " " + _time + " " + _offset);
 		}
 		
+		public function get index():uint
+		{
+			return _index;
+		}
+		
 		public function set index(val:uint):void
 		{
 			_index = val;
 		}
+		
+		public function get active():Boolean
+		{
+			return _active;
+		}
+
+		public function set active(value:Boolean):void
+		{
+			_active = value;
+		}
+
 	}
 }

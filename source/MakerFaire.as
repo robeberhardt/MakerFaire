@@ -4,6 +4,7 @@ package
 	import com.greensock.TweenMax;
 	import com.rgs.fonts.FontLibrary;
 	import com.rgs.rings.Ball;
+	import com.rgs.rings.Connector;
 	import com.rgs.rings.Particle;
 	import com.rgs.rings.Ring;
 	import com.rgs.rings.RingMaster;
@@ -35,13 +36,19 @@ package
 		
 		public function MakerFaire()
 		{
-			
+			alpha = 0;
 			Logger.setMode(Logger.LOG_INTERNAL_ONLY);
-			
-			QueueManager.getInstance().loadedSignal.add(onLoadComplete);
-			QueueManager.getInstance().load("contents.plist");
-			
-			/*
+			QueueManager.getInstance().loadedSignal.addOnce(init);
+			QueueManager.getInstance().load();
+		}
+		
+		private function onLoadComplete(xml:XML):void
+		{
+			init();
+		}
+		
+		private function init():void
+		{
 			starHolder = new MovieClip();
 			addChild(starHolder);
 			pfield = new ParallaxField();
@@ -61,26 +68,52 @@ package
 			ball.x = stage.stageWidth * .5; 
 			ball.y = stage.stageHeight * .5 + 200;
 			
-			
-//			var p:Particle = new Particle("Hello,\nMaker Faire!", FontLibrary.HELVETICA_BOLD);
-//			addChild(p);
-//			p.x = ball.x;
-//			p.y = ball.y;
-//			p.alpha = 1;
-//			
 			timer = new Timer(5000, 0);
 			timer.addEventListener(TimerEvent.TIMER, onTimer);
 			timer.start();
-//			
-//			ball = p;
 			
-			*/
+			TweenMax.to(this, 3, { alpha: 1 } );
 		}
 		
-		private function onLoadComplete(xml:XML):void
-		{
-			//trace("loaded " + xml);
+		/*
+		
+		private function onTimer(e:TimerEvent):void
+		{	
+			//TweenMax.killTweensOf(ball);
+			
+			Logger.log("\n\n------>>> next message: " + QueueManager.getInstance().getNextMessage() + "\n\n");
+			
+			if (ball.parent != this)
+			{
+				var newBallPoint:Point = ball.localToGlobal(new Point(ball.x, ball.y));
+				var newScale:Number = ball.parent.parent.scaleX;
+				trace("\n---> newScale: " + newScale);
+				ball.parent.removeChild(ball);
+				ball.scale = newScale;
+				ball.x = newBallPoint.x;
+				ball.y = newBallPoint.y;
+				addChild(ball);
+			}
+			
+			var targetConnector:Connector = rm.getRandomConnector();
+			var targetRing:Ring = rm.getRingByIndex(targetConnector.index);
+			var targetPoint:Point = targetRing.predictPosition(targetConnector, 2);
+			
+			trace("targetConnector: " + targetConnector);
+			trace("targetRing: " + targetRing);
+			trace("targetPoint: " + targetPoint);
+			
+//			var targetRing:Ring = rm.getRandomRing();
+//			var targetConnector:Connector = targetRing.getRandomConnection();
+//			var targetPoint:Point = targetRing.predictPosition(targetConnector, 2);
+				
+			TweenMax.to(ball, 2, { x:targetPoint.x, y:targetPoint.y,
+				scale: targetRing.realScale, alpha: targetRing.scaleX,
+				onComplete:attachToTarget, onCompleteParams:[ball, targetConnector]
+			});
+			
 		}
+		*/
 		
 		private function onTimer(e:TimerEvent):void
 		{	
@@ -97,21 +130,41 @@ package
 				addChild(ball);
 			}
 			
-			var targetRing:Ring = rm.getRandomRing();
-			var targetBall:Ball = targetRing.getRandomBall();
-			var targetPoint:Point = targetRing.predictPosition(targetBall, 2);
+			var pick:Connector = rm.getRandomConnector();
+			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
+			var targetPoint:Point = targetRing.predictPosition(pick, 2);
+			
+			trace("picK: " + pick);
+//			trace("ring: " + targetRing);
+//			trace("point: " + targetPoint);
+			
+			pick.blink();
+			
+			
 			TweenMax.to(ball, 2, { x:targetPoint.x, y:targetPoint.y,
 				scale: targetRing.realScale, alpha: targetRing.scaleX,
-				onComplete:attachToTarget, onCompleteParams:[ball, targetBall]
+				onComplete:attachToTarget, onCompleteParams: [ball, pick]
 			});
 			
+//			var targetRing:Ring = rm.getRandomRing();
+//			var targetBall:Connector = targetRing.getConnectorByIndex(2);
+//			var targetPoint:Point = targetRing.predictPosition(targetBall, 2);
+			
+//			
+//			TweenMax.to(ball, 2, { x:targetPoint.x, y:targetPoint.y,
+//				scale: targetRing.realScale, alpha: targetRing.scaleX,
+//				onComplete:attachToTarget, onCompleteParams:[ball, targetBall]
+//			});
+			
 		}
+
 		
-		private function attachToTarget(what:*, where:Ball):void
+		private function attachToTarget(what:*, where:Connector):void
 		{
 			where.addChild(what);
 			what.x = what.y = 0;
 			what.scale = 1;
+			where.active = true;
 		}
 	}
 }

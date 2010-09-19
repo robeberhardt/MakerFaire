@@ -60,7 +60,7 @@ package com.rgs.txt
 		
 		private function init():void
 		{
-			loadedSignal = new Signal(XML);
+			loadedSignal = new Signal();
 			updateSignal = new Signal();
 			
 			messageArray = new Array();
@@ -71,7 +71,7 @@ package com.rgs.txt
 				messageArray.push(m);
 			}
 			
-			currentMessage = 0;
+			currentMessage = -1;
 			lastMessage = -1;
 		}
 		
@@ -102,72 +102,54 @@ package com.rgs.txt
 		private function loadComplete(e:LoaderEvent):void
 		{
 			theXML = loader.getContent(path);
-			
-//			trace(theXML..array.dict.length());
-//			trace(theXML..array.dict[15-1].children()); // length-1 is FIRST message, length - lastMessage = LAST message);
-//			
-//			trace(theXML..array.dict[theXML..array.dict.length()-lastMessage]);
-			
+						
 			var xmlLength:int = theXML..array.dict.length();
-			trace("xmlLength = " + xmlLength);
-			trace("lastMessage = " + lastMessage);
-			
+			if (xmlLength > 0) { currentMessage = 0; }
 			
 			for (var i:int=0; i<xmlLength-(lastMessage+1); i++)
 			{
-				
-				
-				
-				
 				var address:String = theXML..array.dict[i].children()[1];
 				var text:String = theXML..array.dict[i].children()[3];
 				var timestamp:String = theXML..array.dict[i].children()[7];
-				
+	
 				var ix:int = xmlLength-1-i;
 				
 				var m:Message = messageArray[ix] as Message;
 				m.address = address;
 				m.text = text;
 				m.timestamp = timestamp;
-				trace(m);
-			
 				
 			}
 			
-			lastMessage = xmlLength-1;
+			lastMessage = xmlLength-1;	
 			
-//			for (var i:int = lastMessage+1; i<xmlLength; i++)
-//			{
-//				var address:String = theXML..array.dict[i].children()[1];
-//				var text:String = theXML..array.dict[i].children()[3];
-//				var timestamp:String = theXML..array.dict[i].children()[7];
-//				var m:Message = messageArray[(xmlLength-i+lastMessage] as Message;
-//				m.address = address;
-//				m.text = text;
-//				m.timestamp = timestamp;
-//				trace(m);
-//			}
-			
-			
-//			Logger.log("lastMessage: " + lastMessage + "\n" + Message(messageArray[lastMessage]).shortMessage + "\n---------------\n");
 			status = LOADED_STATUS;
-			loadedSignal.dispatch(loader.getContent(path));
+			loadedSignal.dispatch();
 			pollTimer.start();
 		}
 		
 		private function loadError(e:LoaderEvent):void
 		{
-			//Logger.log("load error " + e.text);	
+			Logger.log("load error " + e.text);	
 			status = ERROR_STATUS;
 		}
 		
 		public function getNextMessage():Message
 		{
-			var nextMessage:Message = messageArray[currentMessage];
-			if (currentMessage < messageArray.length) { currentMessage ++; }
-//			currentMessage ++;
-//			if (currentMessage == messageArray.length) { currentMessage = 0; }
-			return nextMessage;
+			if (currentMessage < 0)
+			{
+				return null;
+			}
+			else
+			{
+				var nextMessage:Message = messageArray[currentMessage];
+				if (nextMessage.active) { return null; } else
+				{
+					nextMessage.active = true;
+					if (currentMessage < messageArray.length) { currentMessage ++; }
+					return nextMessage;
+				}
+			}
 		}
 	}
 }

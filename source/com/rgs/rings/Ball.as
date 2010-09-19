@@ -26,7 +26,7 @@ package com.rgs.rings {
 		
 		override public function toString():String
 		{
-			return "[Ball " + ix + ", ring " + Ring(parent).ix + ", angle: " + _angle + "]";
+			return "[Ball " + ix + ", ring " + Ring(parent).index + ", angle: " + _angle + "]";
 		}
 		
 		public function localCoords():Point

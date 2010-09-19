@@ -12,20 +12,27 @@ package com.rgs.rings
 		private var speed : Number;
 		private var scale : Number;
 		
-		public var ix : uint;
+		private var _index : uint;
 		
-		private var ballCount : uint = 6;
-		private var ballArray : Array;
+//		private var ballCount : uint = 6;
 		
-		private var ball : Ball;
+		public static const NUMBER_OF_CONNECTORS : uint = 6;
+		private var connectorArray : Array;
+		
+//		private var connector : Connector;
 		
 		public function Ring(radius:Number, scale:Number, speed:Number)
 		{
 			this.radius = radius;
 			this.speed = speed;
 			this.scale = this.scaleX = this.scaleY = scale;
-			ballArray = new Array();
+			connectorArray = new Array();
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
+		}
+		
+		override public function toString():String
+		{
+			return "[Ring " + _index + " ]";
 		}
 		
 		private function init(e:Event=null):void
@@ -35,25 +42,26 @@ package com.rgs.rings
 			graphics.lineStyle(1.5, 0xffffff, .2, false);
 			graphics.drawCircle(0, 0, radius);
 			
-			for (var i:int = 0; i < ballCount; i++)
+			for (var i:int = 0; i < NUMBER_OF_CONNECTORS; i++)
 			{
-				var ball:Ball = new Ball(10, Math.random()*0xffffff);
-				addChild(ball);
-				ball.alpha = 1;
-				ball.ix = i;
-				ball.angle = i * (Math.PI*2) / ballCount;
-				ballArray.push(ball);
-				ball.x = Math.sin( ball.angle ) * radius;
-				ball.y = Math.cos( ball.angle ) * radius;
+				var c:Connector = new Connector(10, Math.random()*0xffffff);
+				addChild(c);
+				c.alpha = 1;
+				c.index = i;
+				c.ring = this;
+				c.angle = i * (Math.PI*2) / NUMBER_OF_CONNECTORS;
+				connectorArray.push(c);
+				c.x = Math.sin( c.angle ) * radius;
+				c.y = Math.cos( c.angle ) * radius;
 				
 			}
 			
 			addEventListener(Event.ENTER_FRAME, onEnterFrame);
 		}
 		
-		public function predictPosition(ball:Ball, time:Number):Point
+		public function predictPosition(c:Connector, time:Number):Point
 		{
-			var tempAngle:Number = ball.angle;
+			var tempAngle:Number = c.angle;
 			var futureFrames:uint = time * stage.frameRate;
 			for (var i:int = 0; i < time * stage.frameRate; i++)
 			{
@@ -66,11 +74,11 @@ package com.rgs.rings
 		private function onEnterFrame(e:Event):void
 		{
 			//rotation += speed * (scale + .1);
-			for each (var ball:Ball in ballArray)
+			for each (var c:Connector in connectorArray)
 			{
-				ball.angle += speed * (scale + .1);
-				ball.x = Math.sin( ball.angle ) * radius;
-				ball.y = Math.cos( ball.angle ) * radius;
+				c.angle += speed * (scale + .1);
+				c.x = Math.sin( c.angle ) * radius;
+				c.y = Math.cos( c.angle ) * radius;
 			}
 		}
 		
@@ -78,9 +86,25 @@ package com.rgs.rings
 			return this.scaleX * parent.scaleX;
 		}
 		
-		public function getRandomBall():Ball
+		public function getConnectorByIndex(index:uint):Connector 
 		{
-			return ballArray[Math.round(Math.random()*(ballCount-1))];
+			return connectorArray[index];
 		}
+		
+		public function getRandomConnector():Connector
+		{
+			return connectorArray[Math.round(Math.random()*(NUMBER_OF_CONNECTORS-1))];
+		}
+
+		public function get index():uint
+		{
+			return _index;
+		}
+
+		public function set index(value:uint):void
+		{
+			_index = value;
+		}
+
 	}
 }

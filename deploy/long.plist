@@ -1,0 +1,2219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Contents</key>
+	<array>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for itHappy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>16465547323</string>
+			<key>Message</key>
+			<string>Deep thoughts  ...Ahhh</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:43 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19175430133</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:30 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>14058193329</string>
+			<key>Message</key>
+			<string>Your fly is open. Or is it mine???</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:37:15 -0400</string>
+		</dict>
+	</array>
+</dict>
+</plist>

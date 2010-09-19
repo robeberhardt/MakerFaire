@@ -6,6 +6,27 @@
 	<array>
 		<dict>
 			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 word word word</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 this will be sweet</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+
+		<dict>
+			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
 			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>

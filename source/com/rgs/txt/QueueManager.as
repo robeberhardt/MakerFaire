@@ -72,7 +72,7 @@ package com.rgs.txt
 			}
 			
 			currentMessage = 0;
-			lastMessage = 0;
+			lastMessage = -1;
 		}
 		
 		public function load(path:String="contents.plist"):void
@@ -110,40 +110,49 @@ package com.rgs.txt
 			
 			var xmlLength:int = theXML..array.dict.length();
 			trace("xmlLength = " + xmlLength);
+			trace("lastMessage = " + lastMessage);
 			
-			for (var i:int = lastMessage; i<xmlLength; i++)
+			
+			for (var i:int=0; i<xmlLength-(lastMessage+1); i++)
 			{
+				
+				
+				
+				
 				var address:String = theXML..array.dict[i].children()[1];
 				var text:String = theXML..array.dict[i].children()[3];
 				var timestamp:String = theXML..array.dict[i].children()[7];
-				var m:Message = messageArray[xmlLength - i] as Message;
+				
+				var ix:int = xmlLength-1-i;
+				
+				var m:Message = messageArray[ix] as Message;
 				m.address = address;
 				m.text = text;
 				m.timestamp = timestamp;
 				trace(m);
+			
+				
 			}
 			
-//			for (var i:int=theXML..array.dict.length()+1; i > lastMessage; i--)
+			lastMessage = xmlLength-1;
+			
+//			for (var i:int = lastMessage+1; i<xmlLength; i++)
 //			{
-//				var ix:int = lastMessage-i;
-//				
-//				trace("last message is now " + lastMessage);
-//				var address:String = theXML..array.dict[ix].children()[1];
-//				var text:String = theXML..array.dict[ix].children()[3];
-//				var timestamp:String = theXML..array.dict[ix].children()[7];
-//				
-//				var m:Message = messageArray[lastMessage-ix] as Message;
+//				var address:String = theXML..array.dict[i].children()[1];
+//				var text:String = theXML..array.dict[i].children()[3];
+//				var timestamp:String = theXML..array.dict[i].children()[7];
+//				var m:Message = messageArray[(xmlLength-i+lastMessage] as Message;
 //				m.address = address;
 //				m.text = text;
 //				m.timestamp = timestamp;
-//				
-//				
+//				trace(m);
 //			}
-//			
+			
+			
 //			Logger.log("lastMessage: " + lastMessage + "\n" + Message(messageArray[lastMessage]).shortMessage + "\n---------------\n");
-//			status = LOADED_STATUS;
-//			loadedSignal.dispatch(loader.getContent(path));
-//			pollTimer.start();
+			status = LOADED_STATUS;
+			loadedSignal.dispatch(loader.getContent(path));
+			pollTimer.start();
 		}
 		
 		private function loadError(e:LoaderEvent):void

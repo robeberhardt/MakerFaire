@@ -32,7 +32,9 @@ package
 		private var stats				: Stats;
 		private var timer				: Timer;
 		
-		private var ball				: *;
+		//public var timeMultiplier		: Number = 1.0;
+		
+		private var ball				: Ball;
 		
 		public function MakerFaire()
 		{

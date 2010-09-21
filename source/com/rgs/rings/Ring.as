@@ -1,5 +1,6 @@
 package com.rgs.rings
 {
+	import com.greensock.TweenMax;
 	import com.rgs.utils.Utils;
 	
 	import flash.display.Sprite;
@@ -11,6 +12,8 @@ package com.rgs.rings
 		private var radius : Number;
 		private var speed : Number;
 		private var scale : Number;
+		
+		private var ringSprite : Sprite;
 		
 		private var _index : uint;
 		
@@ -39,8 +42,11 @@ package com.rgs.rings
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			
-			graphics.lineStyle(1.5, 0xffffff, .2, false);
-			graphics.drawCircle(0, 0, radius);
+			ringSprite = new Sprite();
+			addChild(ringSprite);
+			
+			ringSprite.graphics.lineStyle(1.5, 0xffffff, .2, false);
+			ringSprite.graphics.drawCircle(0, 0, radius);
 			
 			for (var i:int = 0; i < NUMBER_OF_CONNECTORS; i++)
 			{
@@ -104,6 +110,16 @@ package com.rgs.rings
 		public function set index(value:uint):void
 		{
 			_index = value;
+		}
+		
+		public function hideRing():void
+		{
+			TweenMax.to(ringSprite, 1, { alpha: 0 });
+		}
+		
+		public function showRing():void
+		{
+			TweenMax.to(ringSprite, 1, { alpha: 1 });
 		}
 
 	}

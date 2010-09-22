@@ -13,7 +13,7 @@ package com.rgs.rings
 		private var offset : Number = .2;
 		private var speed : Number = .003;
 		private var radius : Number = 300;
-		private var availableConnectors : Array;
+		public var availableConnectors : Array;
 		private var usedConnectors : Array;
 		
 		public function RingMaster()

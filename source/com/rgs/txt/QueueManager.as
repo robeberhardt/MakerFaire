@@ -39,10 +39,10 @@ package com.rgs.txt
 		private static const MAX_MESSAGES				: uint = 5000;
 		private static const POLL_INTERVAL				: uint = 1;
 		
-		public function QueueManager(name:String="TxtReader")
+		public function QueueManager(name:String="QueueManager")
 		{
 			if (!allowInstantiation) {
-				throw new Error("Error: Instantiation failed: Use TxtManager.getInstance()");
+				throw new Error("Error: Instantiation failed: Use QueueManager.getInstance()");
 			} else {
 				this.name = name;
 				init();

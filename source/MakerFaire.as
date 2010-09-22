@@ -10,10 +10,11 @@ package
 	import com.rgs.rings.Particle;
 	import com.rgs.rings.Ring;
 	import com.rgs.rings.RingMaster;
+	import com.rgs.sprites.MessageSprite;
+	import com.rgs.sprites.SpriteFactory;
+	import com.rgs.sprites.SpriteManager;
 	import com.rgs.txt.Message;
-	import com.rgs.txt.MessageSprite;
 	import com.rgs.txt.QueueManager;
-	import com.rgs.txt.SpriteFactory;
 	import com.rgs.utils.Logger;
 	
 	import flash.display.MovieClip;
@@ -71,22 +72,39 @@ package
 			stats = new Stats();
 			addChild(stats);
 			
-			ball = new Ball(10, 0x777777);
-			addChild(ball);
-			ball.x = stage.stageWidth * .5; 
-			ball.y = stage.stageHeight * .5 + 200;
-			
-			timer = new Timer(7000, 0);
-			timer.addEventListener(TimerEvent.TIMER, onTimer);
-			//timer.start();
-			
 			TweenMax.to(this, 3, { alpha: 1 } );
 			
-			SpriteFactory.getInstance().readySignal.addOnce(onSpritesReady);
-			//SpriteFactory.getInstance().make("Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!");
-			SpriteFactory.getInstance().make("   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus.  ");
+			SpriteManager.getInstance();
+			
+			//getNextMessage();
+			
+		
+			timer = new Timer(7000, 0);
+			timer.addEventListener(TimerEvent.TIMER, onTimer);
+	
 		}
 		
+		private function getNextMessage():void
+		{
+			// get the next message from the queue manager and make a message sprite for it
+			var nextMessage:Message = QueueManager.getInstance().getNextMessage();
+			if (nextMessage)
+			{
+				SpriteManager.getInstance().spriteReadySignal.addOnce(function(theNextSprite:MessageSprite)
+				{
+//					trace("theNextSprite is " + theNextSprite);
+//					addChild(theNextSprite);
+//					theNextSprite.x = stage.stageWidth * .5;
+//					theNextSprite.y = stage.stageHeight * .5 + 200;
+//					theNextSprite.arrive();
+//					currentSprite = theNextSprite;
+					getNextSprite();
+					
+				});
+				SpriteManager.getInstance().makeSprites(nextMessage.text);
+			}
+		}
+	
 		private function onSpritesReady(theSprites:Array):void
 		{
 			trace("Got the sprites! - there are " + theSprites.length + " of them...");
@@ -100,23 +118,31 @@ package
 			TweenMax.to(currentSprite, 2, { alpha: 1 });
 			//TweenMax.delayedCall(5, moveToRing, [theSprites[0]]);
 			
-			timer.start();
-		}
-		
-		private function moveToRing(obj:Sprite):void
-		{
-			var pick:Connector = rm.getRandomConnector();
-			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
-			var targetPoint:Point = targetRing.predictPosition(pick, 2);
-			
-			TweenMax.to(obj, 2, { x:targetPoint.x, y:targetPoint.y,
-				scale: targetRing.realScale, alpha: targetRing.scaleX,
-				onComplete:attachToTarget, onCompleteParams: [obj, pick]
-			});
+			//timer.start();
 		}
 		
 		
 		private function onTimer(e:TimerEvent):void
+		{
+			if (rm.availableConnectors.length <= 0)
+			{
+				//destroy a random messageSprite
+				TweenMax.delayedCall(5, getNextSprite);
+			}
+			else
+			{
+				getNextSprite();
+			}
+			
+		}
+		
+		private function getNextSprite():void
+		{
+			
+		}
+		
+		/*
+		private function onTimer(e:TimerEvent=null):void
 		{	
 			trace("currentSprite scale is " + currentSprite.scale);
 			if (currentSprite.parent != this)
@@ -147,38 +173,6 @@ package
 			
 		}
 		
-		/*
-		
-		private function onTimer(e:TimerEvent):void
-		{	
-			if (ball.parent != this)
-			{
-				var newBallPoint:Point = ball.localToGlobal(new Point(ball.x, ball.y));
-				
-				var newScale:Number = Ring(ball.parent.parent).realScale;
-				trace(ball.parent);
-				trace(ball.parent.parent);
-				trace("\n---> newScale: " + newScale);
-				ball.parent.removeChild(ball);
-				ball.scale = newScale;
-				ball.x = newBallPoint.x;
-				ball.y = newBallPoint.y;
-				addChild(ball);
-			}
-			
-			var pick:Connector = rm.getRandomConnector();
-			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
-			var targetPoint:Point = targetRing.predictPosition(pick, 5);
-						
-			pick.blink();
-			
-			
-			TweenMax.to(ball, 5, { x:targetPoint.x, y:targetPoint.y,
-				scale: targetRing.realScale, alpha: targetRing.scaleX, ease:Cubic.easeInOut,
-				onComplete:attachToTarget, onCompleteParams: [ball, pick]
-			});
-						
-		}
 		*/
 		
 		

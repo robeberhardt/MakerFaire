@@ -21,12 +21,12 @@ package com.rgs.sprites
 		
 		private static var instance								: SpriteFactory;
 		private static var allowInstantiation					: Boolean;
-		
-		private var theMessageSprite							: MessageSprite;
-		
+			
 		public var readySignal									: Signal;
-		public var spriteCompleteSignal							: Signal;
-		
+		public var singleSpriteCompleteSignal					: Signal;
+		public var allSpritesCompleteSignal						: Signal;
+		public var preparedSignal								: Signal;
+				
 		private var origSize 									: Number;
 		private var maxWidth									: Number;
 		private var format										: TextFormat;
@@ -43,6 +43,7 @@ package com.rgs.sprites
 		private var spriteArray									: Array;
 		private var fieldGroupIndex								: int;
 		private var fieldGroupCounter							: int;
+		private var tempSprites									: Array;
 		private var sourceFields								: Array;
 		private var pattern										: Array;
 		
@@ -91,10 +92,17 @@ package com.rgs.sprites
 			wordsArray = new Array();
 			spriteArray = new Array();
 			readySignal = new Signal(Array);
-			spriteCompleteSignal = new Signal();
+			preparedSignal = new Signal(int);
+			singleSpriteCompleteSignal = new Signal();
+			allSpritesCompleteSignal = new Signal();
+			tempSprites = new Array();
+			for (var i:int=0; i < 3; i++)
+			{
+				tempSprites.push(new MessageSprite());
+			}
 		}
 		
-		public function make(m:String):void
+		public function prepare(m:String):void
 		{
 			trace("making from " + m);
 			// first we'll remove double-spaces
@@ -187,65 +195,62 @@ package com.rgs.sprites
 			}
 			else
 			{
-				stf = new SplitTextField(field, "lines");
-				
-				sourceFields = stf.textFields;
-				
-				// length of array indicated number of messages
-				// value of each member of array indicates line count for that message
-				
 				if (numlines <= 3)
 				{
-					//makeFieldGroups(stf.textFields, [3]);
 					pattern = [3];
 				}
 				else if (numlines ==4)
 				{
-					//makeFieldGroups(stf.textFields, [2, 2]);
 					pattern = [2, 2];
 				}
 				else if (numlines == 5) 
 				{
-					//makeFieldGroups(stf.textFields, [3, 2]);
 					pattern = [3,2];
 				}
 				else if (numlines == 6)
 				{
-					//makeFieldGroups(stf.textFields, [3, 3]);
 					pattern = [3,3];
 				}
 				else if (numlines == 7)
 				{
-					//makeFieldGroups(stf.textFields, [2, 2, 3]);
 					pattern = [2,2,3];
 				}
 				else if (numlines == 8)
 				{
-					//makeFieldGroups(stf.textFields, [3, 3, 2]);
 					pattern = [3,3,2];
 				}
 				else
 				{
-					//makeFieldGroups(stf.textFields, [3, 3, 3]);
 					pattern = [3,3,3];
 				}
 				
-				
-				spriteArray = SpriteManager.getInstance().getSpritesForUpdate(pattern.length);
-				fieldGroupCounter = 0;
-				fieldGroupIndex = 0;
-				makeNextFieldGroup();
+				preparedSignal.dispatch(pattern.length);
 			}
+		}
+		
+		public function makeSprites(theSprites:Array):void
+		{
+			stf = new SplitTextField(field, "lines");
+			
+			sourceFields = stf.textFields;
+			
+			// length of array indicated number of messages
+			// value of each member of array indicates line count for that message
+			
+			spriteArray = theSprites
+			fieldGroupCounter = 0;
+			fieldGroupIndex = 0;
+			makeNextFieldGroup();
 		}
 		
 		private function makeNextFieldGroup():void
 		{
+			//trace("makeNextFieldGroup: counter: " + fieldGroupCounter + ", index: " + fieldGroupIndex);
 			
-			if (fieldGroupCounter < spriteArray.length)
+			if (fieldGroupCounter < pattern.length)
 			{
-				spriteCompleteSignal.addOnce(function(newSprite:MessageSprite)
+				singleSpriteCompleteSignal.addOnce(function()
 				{
-					trace("==> updated " + newSprite);
 					fieldGroupIndex += pattern[fieldGroupCounter];
 					fieldGroupCounter ++;
 					makeNextFieldGroup();
@@ -257,14 +262,14 @@ package com.rgs.sprites
 			else
 			{
 				// we're done
-				trace("we're all done");
-				readySignal.dispatch(spriteArray);
+				allSpritesCompleteSignal.dispatch();
 			}
+			
 		}
 		
 		private function updateSprite(theSprite:MessageSprite, fields:Array):void
 		{
-			
+			trace("updating sprite: " + theSprite + ", fields: " + fields);
 			
 			while (theSprite.bitmapHolder.numChildren > 0)
 			{
@@ -292,10 +297,12 @@ package com.rgs.sprites
 			theSprite.bitmapHolder.x = -Math.round(theSprite.bitmapHolder.width * .5);
 			theSprite.bitmapHolder.y = -Math.round(theSprite.bitmapHolder.height * .5);		
 			
+			theSprite.fresh = true;
 			
-			spriteCompleteSignal.dispatch(theSprite);
+			singleSpriteCompleteSignal.dispatch();
 		}
 		
+		/*
 		private function makeSprites(fields:Array):void
 		{
 			trace("making sprites from:");
@@ -303,11 +310,12 @@ package com.rgs.sprites
 			{
 				trace(fields[x].text);
 			}
-			SpriteManager.getInstance().spriteReadySignal.addOnce(function(mSprite:MessageSprite)
+			SpriteQueue.getInstance().spriteQueueReadySignal.addOnce(function(mSprite:MessageSprite)
 			{
 				trace("");
 			});
 		}
+		*/
 		
 		/*
 		private function makeSprites(fields:Array):void

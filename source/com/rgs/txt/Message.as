@@ -4,8 +4,8 @@ package com.rgs.txt
 	
 	public class Message extends Sprite
 	{
-		private var _index						: uint;
-		private var _active						: Boolean;
+		public var index						: uint;
+		public var active						: Boolean;
 		private var _address					: String;
 		private var _text						: String;
 		public var shortMessage					: String;
@@ -22,7 +22,7 @@ package com.rgs.txt
 		
 		override public function toString():String
 		{
-			return "[ Message " + _index + " ::: " + shortMessage + ", " + _address + ", " + _timestamp + " ]";
+			return "[ Message " + index + " ::: " + shortMessage + ", " + _address + ", " + _timestamp + " ]";
 		}
 		
 		public function get address():String
@@ -70,26 +70,6 @@ package com.rgs.txt
 			_offset = _timestamp.slice(_timestamp.lastIndexOf(" ")+1);
 			_day = _day.split("-").join("/");
 			return new Date(_day + " " + _time + " " + _offset);
-		}
-		
-		public function get index():uint
-		{
-			return _index;
-		}
-		
-		public function set index(val:uint):void
-		{
-			_index = val;
-		}
-		
-		public function get active():Boolean
-		{
-			return _active;
-		}
-
-		public function set active(value:Boolean):void
-		{
-			_active = value;
 		}
 	}
 }

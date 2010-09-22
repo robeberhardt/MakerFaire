@@ -12,9 +12,9 @@ package
 	import com.rgs.rings.RingMaster;
 	import com.rgs.sprites.MessageSprite;
 	import com.rgs.sprites.SpriteFactory;
-	import com.rgs.sprites.SpriteManager;
+	import com.rgs.sprites.SpriteQueue;
 	import com.rgs.txt.Message;
-	import com.rgs.txt.QueueManager;
+	import com.rgs.txt.MessageLoader;
 	import com.rgs.utils.Logger;
 	
 	import flash.display.MovieClip;
@@ -38,6 +38,7 @@ package
 		private var timer				: Timer;
 		
 		private var currentSprite		: MessageSprite;
+		private var currentMessage		: Message;
 		//public var timeMultiplier		: Number = 1.0;
 		
 		private var ball				: Ball;
@@ -47,8 +48,10 @@ package
 			alpha = 0;
 			TweenPlugin.activate([MotionBlurPlugin]);
 			Logger.setMode(Logger.LOG_INTERNAL_ONLY);
-			QueueManager.getInstance().loadedSignal.addOnce(init);
-			QueueManager.getInstance().load();
+			SpriteQueue.getInstance();
+			MessageLoader.getInstance().loadedSignal.addOnce(init);
+			MessageLoader.getInstance().load();
+
 		}
 		
 		private function onLoadComplete(xml:XML):void
@@ -74,23 +77,45 @@ package
 			
 			TweenMax.to(this, 3, { alpha: 1 } );
 			
-			SpriteManager.getInstance();
-			
-			//getNextMessage();
+			timer = new Timer(5000, 0);
+			timer.addEventListener(TimerEvent.TIMER, mainLoop);
+			timer.start();
 			
 		
-			timer = new Timer(7000, 0);
-			timer.addEventListener(TimerEvent.TIMER, onTimer);
-	
 		}
 		
+		private function mainLoop(e:TimerEvent):void
+		{
+			timer.stop();
+			SpriteQueue.getInstance().emptySignal.add(onEmpty);
+			SpriteQueue.getInstance().nextSpriteSignal.addOnce(gotNextSprite);
+			SpriteQueue.getInstance().getNextSprite();
+		}
+		
+		private function gotNextSprite(theSprite:MessageSprite)
+		{
+			trace("GOT THE NEXT SPRITE! " + theSprite);
+			theSprite.x = stage.stageWidth * .5;
+			theSprite.y = stage.stageHeight * .5 + 200;
+			addChild(theSprite);
+			theSprite.arrive();
+			timer.start();
+		}
+		
+		private function onEmpty():void
+		{
+			trace("we're empty, starting timer...");
+			timer.start();
+		}
+		
+		/*
 		private function getNextMessage():void
 		{
 			// get the next message from the queue manager and make a message sprite for it
-			var nextMessage:Message = QueueManager.getInstance().getNextMessage();
+			var nextMessage:Message = MessageLoader.getInstance().getNextMessage();
 			if (nextMessage)
 			{
-				SpriteManager.getInstance().spriteReadySignal.addOnce(function(theNextSprite:MessageSprite)
+				SpriteQueue.getInstance().spriteQueueReadySignal.addOnce(function(theNextSprite:MessageSprite)
 				{
 //					trace("theNextSprite is " + theNextSprite);
 //					addChild(theNextSprite);
@@ -101,9 +126,10 @@ package
 					getNextSprite();
 					
 				});
-				SpriteManager.getInstance().makeSprites(nextMessage.text);
+				SpriteQueue.getInstance().makeSprites(nextMessage.text);
 			}
 		}
+		*/
 	
 		private function onSpritesReady(theSprites:Array):void
 		{

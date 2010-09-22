@@ -15,6 +15,7 @@ package com.rgs.sprites
 		public var bitmapHolder					: Sprite;
 		private var _stf						: SplitTextField;
 		private var glow						: GlowFilter;
+		public var fresh						: Boolean;
 		
 		public function MessageSprite()
 		{
@@ -22,6 +23,7 @@ package com.rgs.sprites
 			visible = false;
 			alpha = 0;
 			scale = 3;
+			fresh = false;
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 		}
 		

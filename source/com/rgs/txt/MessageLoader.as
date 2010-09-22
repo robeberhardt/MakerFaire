@@ -12,9 +12,9 @@ package com.rgs.txt
 	
 	import org.osflash.signals.Signal;
 	
-	public class QueueManager extends Sprite
+	public class MessageLoader extends Sprite
 	{
-		private static var instance						: QueueManager;
+		private static var instance						: MessageLoader;
 		private static var allowInstantiation			: Boolean;
 		
 		public var loadedSignal 						: Signal;
@@ -27,6 +27,7 @@ package com.rgs.txt
 		
 		
 		private var theXML								: XML;
+		private var xmlLength							: int = 0;
 		
 		private var messageArray						: Array;
 		public var currentMessage						: int;
@@ -37,22 +38,22 @@ package com.rgs.txt
 		public static const ERROR_STATUS				: String = "Error";   
 		
 		private static const MAX_MESSAGES				: uint = 5000;
-		private static const POLL_INTERVAL				: uint = 1;
+		private static const POLL_INTERVAL				: uint = 5;
 		
-		public function QueueManager(name:String="QueueManager")
+		public function MessageLoader(name:String="MessageLoader")
 		{
 			if (!allowInstantiation) {
-				throw new Error("Error: Instantiation failed: Use QueueManager.getInstance()");
+				throw new Error("Error: Instantiation failed: Use MessageLoader.getInstance()");
 			} else {
 				this.name = name;
 				init();
 			}
 		}
 		
-		public static function getInstance(name:String = "QueueManager"):QueueManager {
+		public static function getInstance(name:String = "MessageLoader"):MessageLoader {
 			if (instance == null) {
 				allowInstantiation = true;
-				instance = new QueueManager(name);
+				instance = new MessageLoader(name);
 				allowInstantiation = false;
 			}
 			return instance;
@@ -101,10 +102,20 @@ package com.rgs.txt
 		
 		private function loadComplete(e:LoaderEvent):void
 		{
+			
 			theXML = loader.getContent(path);
 						
-			var xmlLength:int = theXML..array.dict.length();
-			if (xmlLength > 0) { currentMessage = 0; }
+			xmlLength = theXML..array.dict.length();
+			
+			trace("loadComplete - xmlLength = " + xmlLength);
+			
+			if (xmlLength-1 < lastMessage)
+			{
+				trace("things got smaller...");
+				lastMessage = xmlLength-1;
+				currentMessage = lastMessage;
+			}
+			//if (xmlLength > 0) { currentMessage = 0; }
 			
 			for (var i:int=0; i<xmlLength-(lastMessage+1); i++)
 			{
@@ -125,9 +136,10 @@ package com.rgs.txt
 			
 			status = LOADED_STATUS;
 			loadedSignal.dispatch();
+			
 			pollTimer.start();
 		}
-		
+	
 		private function loadError(e:LoaderEvent):void
 		{
 			Logger.log("load error " + e.text);	
@@ -136,19 +148,15 @@ package com.rgs.txt
 		
 		public function getNextMessage():Message
 		{
-			if (currentMessage < 0)
+			trace("getNextMessage::: lastMessage: " + lastMessage + ", currentMessage: " + currentMessage);
+			if (lastMessage > currentMessage)
 			{
-				return null;
+				currentMessage ++;
+				return messageArray[currentMessage];
 			}
 			else
 			{
-				var nextMessage:Message = messageArray[currentMessage];
-				if (nextMessage.active) { return null; } else
-				{
-					nextMessage.active = true;
-					if (currentMessage < messageArray.length) { currentMessage ++; }
-					return nextMessage;
-				}
+				return null;
 			}
 		}
 	}

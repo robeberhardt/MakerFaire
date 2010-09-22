@@ -35,7 +35,7 @@
 			<key>TimeStamp</key>
 			<string>2007-07-17 12:38:40 -0400</string>
 		</dict>
-		
+
 		<dict>
 			<key>Address</key>
 			<string>9178226513</string>
@@ -156,25 +156,16 @@
 			<key>TimeStamp</key>
 			<string>2007-07-17 12:37:43 -0400</string>
 		</dict>
+		
 		<dict>
 			<key>Address</key>
-			<string>19175430133</string>
+			<string>9178226513</string>
 			<key>Message</key>
-			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus. Nunc aliquam orci a turpis interdum sed!</string>
+			<string>it works</string>
 			<key>State</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>TimeStamp</key>
-			<string>2007-07-17 12:37:30 -0400</string>
-		</dict>
-		<dict>
-			<key>Address</key>
-			<string>14058193329</string>
-			<key>Message</key>
-			<string>Your fly is open. Or is it mine???</string>
-			<key>State</key>
-			<integer>0</integer>
-			<key>TimeStamp</key>
-			<string>2007-07-17 12:37:15 -0400</string>
+			<string>2006-04-20 15:43:56 -0400</string>
 		</dict>
 	</array>
 </dict>

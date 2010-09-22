@@ -32,7 +32,7 @@ package com.rgs.rings
 				ring.index = i;
 				addChild(ring);
 				ringArray.push(ring);
-				ring.hideRing();
+				//ring.hideRing();
 			}
 			
 			usedConnectors = new Array();

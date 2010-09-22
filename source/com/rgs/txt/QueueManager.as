@@ -36,7 +36,7 @@ package com.rgs.txt
 		public static const LOADED_STATUS				: String = "Loaded";
 		public static const ERROR_STATUS				: String = "Error";   
 		
-		private static const MAX_MESSAGES				: uint = 2000;
+		private static const MAX_MESSAGES				: uint = 5000;
 		private static const POLL_INTERVAL				: uint = 1;
 		
 		public function QueueManager(name:String="TxtReader")

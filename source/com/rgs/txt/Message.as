@@ -14,6 +14,7 @@ package com.rgs.txt
 		private var _time						: String;
 		private var _offset						: String;
 		private var _date						: Date;
+		private var _hasFollowingPart			: Boolean = true;
 		
 		public function Message()
 		{
@@ -91,6 +92,17 @@ package com.rgs.txt
 		{
 			_active = value;
 		}
+
+		public function get hasFollowingPart():Boolean
+		{
+			return _hasFollowingPart;
+		}
+
+		public function set hasFollowingPart(value:Boolean):void
+		{
+			_hasFollowingPart = value;
+		}
+
 
 	}
 }

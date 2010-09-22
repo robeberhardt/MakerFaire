@@ -2,6 +2,8 @@ package
 {
 	import com.freeactionscript.ParallaxField;
 	import com.greensock.TweenMax;
+	import com.greensock.easing.*;
+	import com.greensock.plugins.*;
 	import com.rgs.fonts.FontLibrary;
 	import com.rgs.rings.Ball;
 	import com.rgs.rings.Connector;
@@ -9,7 +11,9 @@ package
 	import com.rgs.rings.Ring;
 	import com.rgs.rings.RingMaster;
 	import com.rgs.txt.Message;
+	import com.rgs.txt.MessageSprite;
 	import com.rgs.txt.QueueManager;
+	import com.rgs.txt.SpriteFactory;
 	import com.rgs.utils.Logger;
 	
 	import flash.display.MovieClip;
@@ -32,6 +36,7 @@ package
 		private var stats				: Stats;
 		private var timer				: Timer;
 		
+		private var currentSprite		: MessageSprite;
 		//public var timeMultiplier		: Number = 1.0;
 		
 		private var ball				: Ball;
@@ -39,6 +44,7 @@ package
 		public function MakerFaire()
 		{
 			alpha = 0;
+			TweenPlugin.activate([MotionBlurPlugin]);
 			Logger.setMode(Logger.LOG_INTERNAL_ONLY);
 			QueueManager.getInstance().loadedSignal.addOnce(init);
 			QueueManager.getInstance().load();
@@ -70,60 +76,88 @@ package
 			ball.x = stage.stageWidth * .5; 
 			ball.y = stage.stageHeight * .5 + 200;
 			
-			timer = new Timer(5000, 0);
+			timer = new Timer(7000, 0);
 			timer.addEventListener(TimerEvent.TIMER, onTimer);
-			timer.start();
+			//timer.start();
 			
 			TweenMax.to(this, 3, { alpha: 1 } );
+			
+			SpriteFactory.getInstance().readySignal.addOnce(onSpritesReady);
+			//SpriteFactory.getInstance().make("Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!");
+			SpriteFactory.getInstance().make("   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis lacus, lobortis eget commodo vel, gravida placerat metus.  ");
+		}
+		
+		private function onSpritesReady(theSprites:Array):void
+		{
+			trace("Got the sprites! - there are " + theSprites.length + " of them...");
+			trace(theSprites);
+			currentSprite = theSprites[0];
+			currentSprite.scale = 1;
+			currentSprite.x = stage.stageWidth * .5;
+			currentSprite.y = stage.stageHeight * .5 + 200;
+			currentSprite.alpha = 0;
+			addChild(currentSprite);
+			TweenMax.to(currentSprite, 2, { alpha: 1 });
+			//TweenMax.delayedCall(5, moveToRing, [theSprites[0]]);
+			
+			timer.start();
+		}
+		
+		private function moveToRing(obj:Sprite):void
+		{
+			var pick:Connector = rm.getRandomConnector();
+			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
+			var targetPoint:Point = targetRing.predictPosition(pick, 2);
+			
+			TweenMax.to(obj, 2, { x:targetPoint.x, y:targetPoint.y,
+				scale: targetRing.realScale, alpha: targetRing.scaleX,
+				onComplete:attachToTarget, onCompleteParams: [obj, pick]
+			});
+		}
+		
+		
+		private function onTimer(e:TimerEvent):void
+		{	
+			trace("currentSprite scale is " + currentSprite.scale);
+			if (currentSprite.parent != this)
+			{
+				var newBallPoint:Point = currentSprite.localToGlobal(new Point(currentSprite.x, currentSprite.y));
+				var newScale:Number = Ring(currentSprite.parent.parent).realScale;
+				trace("newScale: " + newScale + ", from " + currentSprite.parent.parent);
+				trace("\n---> newScale: " + newScale);
+				currentSprite.parent.removeChild(currentSprite);
+				currentSprite.scale = newScale;
+				currentSprite.x = newBallPoint.x;
+				currentSprite.y = newBallPoint.y;
+				addChild(currentSprite);
+			}
+			
+			var pick:Connector = rm.getRandomConnector();
+			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
+			var targetPoint:Point = targetRing.predictPosition(pick, 2);
+			
+			pick.blink();
+			
+			
+			TweenMax.to(currentSprite, 2, { x:targetPoint.x, y:targetPoint.y,
+				scale: targetRing.realScale, alpha: targetRing.scaleX+.1,
+				motionBlur:{strength: 2, quality: 4}, ease:Cubic.easeInOut,
+				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick]
+			});
+			
 		}
 		
 		/*
 		
 		private function onTimer(e:TimerEvent):void
 		{	
-			//TweenMax.killTweensOf(ball);
-			
-			Logger.log("\n\n------>>> next message: " + QueueManager.getInstance().getNextMessage() + "\n\n");
-			
 			if (ball.parent != this)
 			{
 				var newBallPoint:Point = ball.localToGlobal(new Point(ball.x, ball.y));
-				var newScale:Number = ball.parent.parent.scaleX;
-				trace("\n---> newScale: " + newScale);
-				ball.parent.removeChild(ball);
-				ball.scale = newScale;
-				ball.x = newBallPoint.x;
-				ball.y = newBallPoint.y;
-				addChild(ball);
-			}
-			
-			var targetConnector:Connector = rm.getRandomConnector();
-			var targetRing:Ring = rm.getRingByIndex(targetConnector.index);
-			var targetPoint:Point = targetRing.predictPosition(targetConnector, 2);
-			
-			trace("targetConnector: " + targetConnector);
-			trace("targetRing: " + targetRing);
-			trace("targetPoint: " + targetPoint);
-			
-//			var targetRing:Ring = rm.getRandomRing();
-//			var targetConnector:Connector = targetRing.getRandomConnection();
-//			var targetPoint:Point = targetRing.predictPosition(targetConnector, 2);
 				
-			TweenMax.to(ball, 2, { x:targetPoint.x, y:targetPoint.y,
-				scale: targetRing.realScale, alpha: targetRing.scaleX,
-				onComplete:attachToTarget, onCompleteParams:[ball, targetConnector]
-			});
-			
-		}
-		*/
-		
-		private function onTimer(e:TimerEvent):void
-		{	
-			//TweenMax.killTweensOf(ball);
-			if (ball.parent != this)
-			{
-				var newBallPoint:Point = ball.localToGlobal(new Point(ball.x, ball.y));
-				var newScale:Number = ball.parent.parent.scaleX;
+				var newScale:Number = Ring(ball.parent.parent).realScale;
+				trace(ball.parent);
+				trace(ball.parent.parent);
 				trace("\n---> newScale: " + newScale);
 				ball.parent.removeChild(ball);
 				ball.scale = newScale;
@@ -134,32 +168,19 @@ package
 			
 			var pick:Connector = rm.getRandomConnector();
 			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
-			var targetPoint:Point = targetRing.predictPosition(pick, 2);
-			
-			trace("picK: " + pick);
-//			trace("ring: " + targetRing);
-//			trace("point: " + targetPoint);
-			
+			var targetPoint:Point = targetRing.predictPosition(pick, 5);
+						
 			pick.blink();
 			
 			
-			TweenMax.to(ball, 2, { x:targetPoint.x, y:targetPoint.y,
-				scale: targetRing.realScale, alpha: targetRing.scaleX,
+			TweenMax.to(ball, 5, { x:targetPoint.x, y:targetPoint.y,
+				scale: targetRing.realScale, alpha: targetRing.scaleX, ease:Cubic.easeInOut,
 				onComplete:attachToTarget, onCompleteParams: [ball, pick]
 			});
-			
-//			var targetRing:Ring = rm.getRandomRing();
-//			var targetBall:Connector = targetRing.getConnectorByIndex(2);
-//			var targetPoint:Point = targetRing.predictPosition(targetBall, 2);
-			
-//			
-//			TweenMax.to(ball, 2, { x:targetPoint.x, y:targetPoint.y,
-//				scale: targetRing.realScale, alpha: targetRing.scaleX,
-//				onComplete:attachToTarget, onCompleteParams:[ball, targetBall]
-//			});
-			
+						
 		}
-
+		*/
+		
 		
 		private function attachToTarget(what:*, where:Connector):void
 		{

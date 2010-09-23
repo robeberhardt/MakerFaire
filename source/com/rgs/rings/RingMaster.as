@@ -11,7 +11,7 @@ package com.rgs.rings
 	public class RingMaster extends Sprite
 	{
 		
-		private var count : uint = 1;
+		private var count : uint = 5;
 		private var ringArray : Array;
 		private var offset : Number = .2;
 		private var speed : Number = .001;
@@ -36,7 +36,7 @@ package com.rgs.rings
 				ring.index = i;
 				addChild(ring);
 				ringArray.push(ring);
-				//ring.hideRing();
+				ring.hideRing();
 			}
 			
 			usedConnectors = new Array();

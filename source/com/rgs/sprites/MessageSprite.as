@@ -23,6 +23,7 @@ package com.rgs.sprites
 		public var busySignal					: Signal;
 		
 		private static const FULL_SCALE			: Number = 4;
+		private static const ARRIVE_MULTIPLIER	: Number = 1;
 		
 		public function MessageSprite()
 		{
@@ -44,7 +45,9 @@ package com.rgs.sprites
 			filters = [glow];
 			addChild(bitmapHolder);
 			if (_stf) { addChild(_stf); }
-			graphics.beginFill(0x00FF00, 1);
+			
+			// registration dot
+			graphics.beginFill(0x00FF00, 0);
 			graphics.drawCircle(0, 0, 10);
 			graphics.endFill();
 		}
@@ -86,9 +89,9 @@ package com.rgs.sprites
 //			graphics.endFill();
 //			trace("arriving");
 //			trace(x, y);
-			TweenMax.to(this, 3, { autoAlpha: 1 });
-			TweenMax.to(this, 3, { scale: 1, ease:Cubic.easeOut });
-			TweenMax.to(this, 4, { delay: 1, glowFilter:{strength: 0, blurX: 0, blurY: 0} });
+			TweenMax.to(this, 3*ARRIVE_MULTIPLIER, { autoAlpha: 1 });
+			TweenMax.to(this, 3*ARRIVE_MULTIPLIER, { scale: 1, ease:Cubic.easeOut });
+			TweenMax.to(this, 4*ARRIVE_MULTIPLIER, { delay: 1, glowFilter:{strength: 0, blurX: 0, blurY: 0} });
 		}
 		
 		public function depart():void

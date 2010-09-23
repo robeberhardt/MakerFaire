@@ -84,12 +84,12 @@ package
 			
 			TweenMax.to(this, 3, { alpha: 1 } );
 			
-			//hookupTimer = new Timer(6000, 0);
-			hookupTimer = new Timer(1000, 0);
+			hookupTimer = new Timer(6000, 0);
+			//hookupTimer = new Timer(1000, 0);
 			hookupTimer.addEventListener(TimerEvent.TIMER, hookup);
 			
-			//queueTimer = new Timer(5000, 0);
-			queueTimer = new Timer(1000, 0);
+			queueTimer = new Timer(5000, 0);
+			//queueTimer = new Timer(1000, 0);
 			queueTimer.addEventListener(TimerEvent.TIMER, mainLoop);
 			
 			// and away we go!
@@ -133,6 +133,7 @@ package
 			}
 			
 			var hookupTime:Number = 2;
+			//var hookupTime:Number = .25;
 			
 			if (currentSprite.parent != this)
 			{
@@ -149,24 +150,25 @@ package
 			
 			pick = rm.getRandomConnector();
 			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
-			var targetPoint:Point = targetRing.predictPosition(pick, hookupTime);
+			//var targetPoint:Point = targetRing.predictPosition(pick, hookupTime);
 			
 			//pick.blink();
 			
+			
+			/*
 			TweenMax.to(currentSprite, hookupTime, { dynamicProps: {  x:getTargetPointX, y:getTargetPointY },
 				scale: targetRing.realScale, alpha: 1 - (targetRing.index * .1),
 				motionBlur:{strength: 2, quality: 4}, ease:Cubic.easeInOut,
 				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick]
 			});
+			*/
 			
-			
-			/*
-			TweenMax.to(currentSprite, hookupTime, { x:targetPoint.x, y:targetPoint.y,
-				scale: targetRing.realScale, alpha: 1 - (targetRing.index * .1),
+			TweenMax.to(currentSprite, hookupTime, { dynamicProps: {  x:getTargetPointX, y:getTargetPointY },
+				scale: targetRing.realScale, alpha: .5 + targetRing.index,
 				motionBlur:{strength: 2, quality: 4}, ease:Cubic.easeInOut,
 				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick]
 			});
-			*/
+			
 		}
 		
 		private function getTargetPointX():Number

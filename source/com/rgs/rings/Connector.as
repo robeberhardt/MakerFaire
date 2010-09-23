@@ -35,7 +35,8 @@ package com.rgs.rings
 		}
 		
 		public function init(e:Event=null):void {
-			graphics.beginFill(fillcolor);
+			// registration dot
+			graphics.beginFill(fillcolor, 0);
 			graphics.drawCircle(0, 0, radius);
 			graphics.endFill();
 			
@@ -86,10 +87,6 @@ package com.rgs.rings
 		public function set active(value:Boolean):void
 		{
 			_active = value;
-			graphics.clear();
-			graphics.beginFill(0x0000FF);
-			graphics.drawCircle(0, 0, radius);
-			graphics.endFill();
 		}
 		
 		public function get ring():Ring

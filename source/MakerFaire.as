@@ -4,8 +4,8 @@ package
 	import com.greensock.TweenMax;
 	import com.greensock.easing.*;
 	import com.greensock.plugins.*;
+	import com.rgs.egg.Invader;
 	import com.rgs.fonts.FontLibrary;
-	import com.rgs.rings.Ball;
 	import com.rgs.rings.Connector;
 	import com.rgs.rings.Particle;
 	import com.rgs.rings.Ring;
@@ -24,7 +24,6 @@ package
 	import flash.geom.Point;
 	import flash.text.Font;
 	import flash.utils.Timer;
-	
 	
 	import net.hires.debug.Stats;
 	
@@ -45,7 +44,8 @@ package
 		
 		private var pick				: Connector;
 		
-		private var ball				: Ball;
+		private var egg				: Invader;
+		private var eggTimer		: Timer;
 		
 		public function MakerFaire()
 		{
@@ -73,6 +73,12 @@ package
 			pfield = new ParallaxField();
 			pfield.createField(starHolder, 10, 10, stage.stageWidth, stage.stageHeight, 100, 3, 1, .05);
 			
+			egg = new Invader();
+			addChild(egg);
+			eggTimer = new Timer(30000);
+			eggTimer.addEventListener(TimerEvent.TIMER, onEggTimer);
+			eggTimer.start();
+			
 			rm = new RingMaster();
 			rm.scale = 1.25;
 			rm.x = Math.round(stage.stageWidth * .5);
@@ -81,6 +87,9 @@ package
 			
 			stats = new Stats();
 			addChild(stats);
+			
+			
+			
 			
 			TweenMax.to(this, 3, { alpha: 1 } );
 			
@@ -98,6 +107,11 @@ package
 			
 			
 		
+		}
+		
+		private function onEggTimer(e:TimerEvent):void
+		{
+			egg.invade();
 		}
 		
 		private function mainLoop(e:TimerEvent):void

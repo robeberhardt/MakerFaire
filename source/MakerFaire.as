@@ -57,7 +57,8 @@ package
 			addChild(SpriteFactory.getInstance());
 			
 			MessageLoader.getInstance().loadedSignal.addOnce(init);
-			MessageLoader.getInstance().load("long.plist");
+			//MessageLoader.getInstance().load("long.plist");
+			MessageLoader.getInstance().load("contents.plist");
 
 		}
 		
@@ -85,8 +86,8 @@ package
 			rm.y = Math.round(stage.stageHeight * .5);
 			addChild(rm);
 			
-			stats = new Stats();
-			addChild(stats);
+//			stats = new Stats();
+//			addChild(stats);
 			
 			
 			

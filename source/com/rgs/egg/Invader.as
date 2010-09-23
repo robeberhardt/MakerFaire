@@ -19,10 +19,6 @@ package com.rgs.egg
 			trace("INVADERS ARE : " + invaders);
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 			
-			
-			
-			
-			
 		}
 		
 		private function init(e:Event=null)
@@ -30,6 +26,7 @@ package com.rgs.egg
 			for each (var i:MovieClip in invaders)
 			{
 				addChild(i);
+				i.x = -1000;
 			}
 		}
 		

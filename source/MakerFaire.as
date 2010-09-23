@@ -15,6 +15,7 @@ package
 	import com.rgs.sprites.SpriteQueue;
 	import com.rgs.txt.Message;
 	import com.rgs.txt.MessageLoader;
+	import com.rgs.utils.KeyboardManager;
 	import com.rgs.utils.Logger;
 	
 	import flash.display.MovieClip;
@@ -29,6 +30,7 @@ package
 	
 	public class MakerFaire extends MovieClip
 	{
+
 		private var rm					: RingMaster;
 		
 		private var starHolder			: MovieClip;
@@ -57,6 +59,7 @@ package
 			addChild(SpriteFactory.getInstance());
 			
 			MessageLoader.getInstance().loadedSignal.addOnce(init);
+
 			//MessageLoader.getInstance().load("long.plist");
 			MessageLoader.getInstance().load("contents.plist");
 
@@ -69,6 +72,8 @@ package
 		
 		private function init():void
 		{
+			addChild(KeyboardManager.getInstance());
+			
 			starHolder = new MovieClip();
 			addChild(starHolder);
 			pfield = new ParallaxField();
@@ -76,7 +81,8 @@ package
 			
 			egg = new Invader();
 			addChild(egg);
-			eggTimer = new Timer(30000);
+			KeyboardManager.getInstance().invaderSignal.add(onInvaderKey);
+			eggTimer = new Timer(600000);
 			eggTimer.addEventListener(TimerEvent.TIMER, onEggTimer);
 			eggTimer.start();
 			
@@ -85,13 +91,13 @@ package
 			rm.x = Math.round(stage.stageWidth * .5);
 			rm.y = Math.round(stage.stageHeight * .5);
 			addChild(rm);
+			KeyboardManager.getInstance().ringSignal.add(onRingKey);
+			
+			KeyboardManager.getInstance().killSignal.add(onKillKey);
 			
 //			stats = new Stats();
 //			addChild(stats);
-			
-			
-			
-			
+						
 			TweenMax.to(this, 3, { alpha: 1 } );
 			
 			hookupTimer = new Timer(6000, 0);
@@ -110,9 +116,12 @@ package
 		
 		}
 		
-		private function onEggTimer(e:TimerEvent):void
+		private function onKillKey():void
 		{
-			egg.invade();
+			if (rm.usedConnectors.length > 0)
+			{ 
+				rm.killRandomSprite();
+			}
 		}
 		
 		private function mainLoop(e:TimerEvent):void
@@ -209,7 +218,33 @@ package
 			queueTimer.start();
 		}
 		
-	
+		private function onRingKey():void
+		{
+			rm.toggleRings();
+		}
+		
+		/*
+		*   INVADER STUFF
+		*/
+		
+		private function onInvaderKey():void
+		{
+			trace("INVASION");
+			eggTimer.stop();
+			egg.invade();
+		}
+		
+		private function onEggTimer(e:TimerEvent):void
+		{
+			eggTimer.stop();
+			egg.invade();
+		}
+		
+		private function onInvasionOver():void
+		{
+			trace("restarting egg timer");
+			eggTimer.start();
+		}
 		
 		
 	}

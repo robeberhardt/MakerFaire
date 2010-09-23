@@ -17,11 +17,13 @@ package com.rgs.rings
 		private var speed : Number = .001;
 		private var radius : Number = 300;
 		public var availableConnectors : Array;
-		private var usedConnectors : Array;
+		public var usedConnectors : Array;
 		public var doneKillingSignal : Signal;
+		public var ringsVisible : Boolean;
 		
 		public function RingMaster()
 		{
+			ringsVisible = false;
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 		}
 		
@@ -94,6 +96,26 @@ package com.rgs.rings
 		public function set scale(val:Number):void
 		{
 			scaleX = scaleY = val;
+		}
+		
+		public function toggleRings():void
+		{
+			if (ringsVisible) 
+			{
+				ringsVisible = false;
+				for (var i:int = 0; i<ringArray.length; i++)
+				{
+					Ring(ringArray[i]).hideRing();
+				}
+			}
+			else
+			{
+				ringsVisible = true;
+				for (i = 0; i<ringArray.length; i++)
+				{
+					Ring(ringArray[i]).showRing();
+				}
+			}
 		}
 	}
 }

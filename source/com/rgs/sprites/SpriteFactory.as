@@ -225,6 +225,8 @@ package com.rgs.sprites
 		
 		public function makeSprites(theSprites:Array):void
 		{
+			
+			trace("makeSprites:  "+ theSprites);
 			stf = new SplitTextField(field, "lines");
 			
 			sourceFields = stf.textFields;
@@ -232,7 +234,7 @@ package com.rgs.sprites
 			// length of array indicated number of messages
 			// value of each member of array indicates line count for that message
 			
-			spriteArray = theSprites
+			spriteArray = theSprites;
 			fieldGroupCounter = 0;
 			fieldGroupIndex = 0;
 			makeNextFieldGroup();
@@ -240,10 +242,12 @@ package com.rgs.sprites
 		
 		private function makeNextFieldGroup():void
 		{
-			//trace("makeNextFieldGroup: counter: " + fieldGroupCounter + ", index: " + fieldGroupIndex);
+			
 			
 			if (fieldGroupCounter < pattern.length)
 			{
+				trace("makeNextFieldGroup: counter: " + fieldGroupCounter + ", index: " + fieldGroupIndex);
+				
 				singleSpriteCompleteSignal.addOnce(function()
 				{
 					fieldGroupIndex += pattern[fieldGroupCounter];
@@ -295,7 +299,7 @@ package com.rgs.sprites
 //			theSprite.bitmapHolder.y = -Math.round(theSprite.bitmapHolder.height * .5);	
 			
 			
-			theSprite.fresh = true;
+			theSprite.busy = true;
 			
 			singleSpriteCompleteSignal.dispatch();
 		}

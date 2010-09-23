@@ -8,6 +8,26 @@
 			<key>Address</key>
 			<string>9178226513</string>
 			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
 			<string>Message #10</string>
 			<key>State</key>
 			<integer>1</integer>
@@ -181,7 +201,7 @@
 			<key>Address</key>
 			<string>9178226513</string>
 			<key>Message</key>
-			<string>it works</string>
+			<string>awesome</string>
 			<key>State</key>
 			<integer>1</integer>
 			<key>TimeStamp</key>
@@ -221,7 +241,7 @@
 			<key>Address</key>
 			<string>9178226513</string>
 			<key>Message</key>
-			<string>it works</string>
+			<string>cool</string>
 			<key>State</key>
 			<integer>1</integer>
 			<key>TimeStamp</key>

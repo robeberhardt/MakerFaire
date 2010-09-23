@@ -12,7 +12,10 @@ package com.rgs.sprites
 		private static var instance						: SpriteQueue;
 		private static var allowInstantiation			: Boolean;
 		
-		private var	spriteQueue					: Array;
+		private var	emptySprites				: Array;
+		private var readySprites				: Array;
+		private var busySprites					: Array;
+		
 		private var currentSpriteIndex			: int;
 		private var nextUpdateableSpriteIndex	: int;
 		private var nextAvailableSpriteIndex	: int;
@@ -46,15 +49,18 @@ package com.rgs.sprites
 		
 		private function init():void
 		{
-			spriteQueue = new Array();
-			
+			emptySprites = new Array();
+			readySprites = new Array();
+			busySprites = new Array();
 			
 			// make an array of empty messagesprites
 			for (var i:int=0; i<MAX_SPRITES; i++)
 			{
 				var newSprite:MessageSprite = new MessageSprite();
+				newSprite.recycleSignal.add(onRecycleSignal);
+				newSprite.busySignal.add(onBusySignal);
 				newSprite.index = i;
-				spriteQueue.push(newSprite);
+				emptySprites.push(newSprite);
 			}
 			
 			currentSpriteIndex = -1;
@@ -65,6 +71,19 @@ package com.rgs.sprites
 			//spriteQueueReadySignal = new Signal(MessageSprite);
 			nextSpriteSignal = new Signal(MessageSprite);
 			emptySignal = new Signal();
+		}
+		
+		private function onRecycleSignal(theSprite:MessageSprite):void
+		{
+			trace("    ---> pushing " + theSprite + " back into the empty queue.");
+			emptySprites.push(theSprite);
+		}
+		
+		private function onBusySignal(theSprite:MessageSprite):void
+		{
+			trace("    ---> pushing " + theSprite + " into the ready queue.");
+			readySprites.push(theSprite);
+			trace("pushed into readySprites - " + readySprites + "\n" + readySprites.length);
 		}
 		
 		/*
@@ -82,19 +101,68 @@ package com.rgs.sprites
 		}
 		*/
 		
+		public function getNextAvailableSprite():void
+		{
+			trace("\n\n-----------\nready: " + readySprites + "\nbusy: " + busySprites + "\nempty: " + emptySprites + "\n-------------\n");
+			if (readySprites.length > 0)
+			{
+				trace("there's a ready sprite: " + readySprites[0]);
+				trace(typeof(readySprites[0]));
+				var candidate:MessageSprite = readySprites.shift();
+				//var candidate:MessageSprite = readySprites[0];
+				trace("candidate: " + candidate);
+				//candidate.busy = true;
+				//busySprites.push(candidate);
+				
+				nextSpriteSignal.dispatch(candidate);
+			}
+			else
+			{
+				// we have to make some more
+				var message:Message = MessageLoader.getInstance().getNextMessage();
+				if (message != null)
+				{
+					// ok we've got a message, let's make sprites and add them to the queue
+					SpriteFactory.getInstance().preparedSignal.addOnce( function (count:int)
+					{
+						trace("the next message will require " + count + " sprites.");
+						trace("there are " + emptySprites.length + " empty sprites.");
+						if (count <= emptySprites.length)
+						{
+							SpriteFactory.getInstance().allSpritesCompleteSignal.addOnce( function()
+							{
+								trace("    ------> now we'll check again...");
+								getNextAvailableSprite();
+							});
+							var theEmpties:Array = emptySprites.splice(0, count);
+							trace("theEmpties:  "+ theEmpties);
+							SpriteFactory.getInstance().makeSprites(theEmpties);
+						}
+					});
+					SpriteFactory.getInstance().prepare(message.text);
+				}
+				else
+				{
+					// nothing more right now
+					emptySignal.dispatch();
+				}
+			}
+		}
+		
+		/*
 		public function getNextSprite():void
 		{
 
 			// do we have an available sprite in the queue?
-			trace("trying to get next sprite - currentSpriteIndex = " + currentSpriteIndex + ", length = " + spriteQueue.length);
+			trace("trying to get next sprite - currentSpriteIndex = " + currentSpriteIndex + ", length = " + emptySprites.length);
 			var nextPossible:int = currentSpriteIndex + 1;
-			if (nextPossible > spriteQueue.length-1) { nextPossible = 0; }
+			if (nextPossible > emptySprites.length-1) { nextPossible = 0; }
 			
-			var candidate:MessageSprite = spriteQueue[nextPossible];
-			if (candidate.fresh)
+			var candidate:MessageSprite = emptySprites[nextPossible];
+			if (candidate.busy)
 			{
 				trace("we've got a fresh one");
-				candidate.fresh = false;
+				candidate.busy = false;
 				nextSpriteSignal.dispatch(candidate);
 				
 				currentSpriteIndex = nextPossible;
@@ -121,9 +189,9 @@ package com.rgs.sprites
 						for (var i:int=0; i<count; i++)
 						{
 							trace("i=" + i + ", nextUpdateableSpriteIndex =" + nextUpdateableSpriteIndex);
-							tempArray.push(spriteQueue[nextUpdateableSpriteIndex]);
+							tempArray.push(emptySprites[nextUpdateableSpriteIndex]);
 							nextUpdateableSpriteIndex ++;
-							if (nextUpdateableSpriteIndex > spriteQueue.length-1)
+							if (nextUpdateableSpriteIndex > emptySprites.length-1)
 							{
 								nextUpdateableSpriteIndex = 0;
 							}
@@ -161,6 +229,7 @@ package com.rgs.sprites
 				}
 			}
 		}
+		*/
 		
 		/*
 		public function getNextSprite():void
@@ -179,9 +248,9 @@ package com.rgs.sprites
 			for (var i:int=0; i<count; i++)
 			{
 				nextUpdateableSpriteIndex ++;
-				if (nextUpdateableSpriteIndex == spriteQueue.length) { nextUpdateableSpriteIndex = 0; }
+				if (nextUpdateableSpriteIndex == emptySprites.length) { nextUpdateableSpriteIndex = 0; }
 			}
-			return spriteQueue.slice(nextSpriteTemp, nextSpriteTemp + count);
+			return emptySprites.slice(nextSpriteTemp, nextSpriteTemp + count);
 		}
 	}
 }

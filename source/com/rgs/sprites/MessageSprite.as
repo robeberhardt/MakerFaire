@@ -8,6 +8,8 @@ package com.rgs.sprites
 	import flash.events.Event;
 	import flash.filters.GlowFilter;
 	
+	import org.osflash.signals.Signal;
+	
 	public class MessageSprite extends Sprite
 	{
 		public  var index						: int;
@@ -15,7 +17,9 @@ package com.rgs.sprites
 		public var bitmapHolder					: Sprite;
 		private var _stf						: SplitTextField;
 		private var glow						: GlowFilter;
-		public var fresh						: Boolean;
+		private var _busy						: Boolean;
+		public var recycleSignal				: Signal;
+		public var busySignal					: Signal;
 		
 		public function MessageSprite()
 		{
@@ -23,7 +27,9 @@ package com.rgs.sprites
 			visible = false;
 			alpha = 0;
 			scale = 3;
-			fresh = false;
+			busy = false;
+			recycleSignal = new Signal(MessageSprite);
+			busySignal = new Signal(MessageSprite);
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 		}
 		
@@ -93,12 +99,28 @@ package com.rgs.sprites
 			visible = false;
 			alpha = 0;
 			scale = 3;
-			fresh = false;
+			busy = false;
 			glow.strength = 5;
 			glow.quality = 5;
 			glow.blurX = 15;
 			glow.blurY = 15;
+			recycleSignal.dispatch(this);
 		}
+
+		public function get busy():Boolean
+		{
+			return _busy;
+		}
+
+		public function set busy(value:Boolean):void
+		{
+			_busy = value;
+			if (_busy)
+			{
+				busySignal.dispatch(this);
+			}
+		}
+
 
 	}
 }

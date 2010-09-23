@@ -98,9 +98,20 @@ package
 		{
 			queueTimer.stop();
 			SpriteQueue.getInstance().nextSpriteSignal.addOnce(gotNextSprite);
-			SpriteQueue.getInstance().getNextSprite();
+			SpriteQueue.getInstance().getNextAvailableSprite();
 		}
 		
+		private function gotNextSprite(theSprite:MessageSprite)
+		{
+			theSprite.x = stage.stageWidth * .5;
+			theSprite.y = stage.stageHeight * .5 + 200;
+			addChild(theSprite);
+			theSprite.arrive();
+			currentSprite = theSprite;
+			hookupTimer.start();
+		}
+		
+		/*
 		private function gotNextSprite(theSprite:MessageSprite)
 		{
 			trace("GOT THE NEXT SPRITE! " + theSprite);
@@ -131,6 +142,7 @@ package
 			}
 			
 		}
+		*/
 		
 		private function onEmpty():void
 		{
@@ -141,6 +153,11 @@ package
 		private function hookup(e:TimerEvent):void
 		{
 			hookupTimer.stop();
+			trace("hookup - available connectors = " + rm.availableConnectors.length);
+			if (rm.availableConnectors.length == 0)
+			{ 
+				rm.killRandomSprite();
+			}
 			
 			var hookupTime:Number = 2;
 			
@@ -183,99 +200,7 @@ package
 			queueTimer.start();
 		}
 		
-		/*
-		private function getNextMessage():void
-		{
-			// get the next message from the queue manager and make a message sprite for it
-			var nextMessage:Message = MessageLoader.getInstance().getNextMessage();
-			if (nextMessage)
-			{
-				SpriteQueue.getInstance().spriteQueueReadySignal.addOnce(function(theNextSprite:MessageSprite)
-				{
-//					trace("theNextSprite is " + theNextSprite);
-//					addChild(theNextSprite);
-//					theNextSprite.x = stage.stageWidth * .5;
-//					theNextSprite.y = stage.stageHeight * .5 + 200;
-//					theNextSprite.arrive();
-//					currentSprite = theNextSprite;
-					getNextSprite();
-					
-				});
-				SpriteQueue.getInstance().makeSprites(nextMessage.text);
-			}
-		}
-		*/
 	
-		private function onSpritesReady(theSprites:Array):void
-		{
-			trace("Got the sprites! - there are " + theSprites.length + " of them...");
-			trace(theSprites);
-			currentSprite = theSprites[0];
-			currentSprite.scale = 1;
-			currentSprite.x = stage.stageWidth * .5;
-			currentSprite.y = stage.stageHeight * .5 + 200;
-			currentSprite.alpha = 0;
-			addChild(currentSprite);
-			TweenMax.to(currentSprite, 2, { alpha: 1 });
-			//TweenMax.delayedCall(5, moveToRing, [theSprites[0]]);
-			
-			//timer.start();
-		}
-		
-		
-		private function onTimer(e:TimerEvent):void
-		{
-			if (rm.availableConnectors.length <= 0)
-			{
-				//destroy a random messageSprite
-				TweenMax.delayedCall(5, getNextSprite);
-			}
-			else
-			{
-				getNextSprite();
-			}
-			
-		}
-		
-		private function getNextSprite():void
-		{
-			
-		}
-		
-		/*
-		private function onTimer(e:TimerEvent=null):void
-		{	
-			trace("currentSprite scale is " + currentSprite.scale);
-			if (currentSprite.parent != this)
-			{
-				var newBallPoint:Point = currentSprite.localToGlobal(new Point(currentSprite.x, currentSprite.y));
-				var newScale:Number = Ring(currentSprite.parent.parent).realScale;
-				trace("newScale: " + newScale + ", from " + currentSprite.parent.parent);
-				trace("\n---> newScale: " + newScale);
-				currentSprite.parent.removeChild(currentSprite);
-				currentSprite.scale = newScale;
-				currentSprite.x = newBallPoint.x;
-				currentSprite.y = newBallPoint.y;
-				addChild(currentSprite);
-			}
-			
-			var pick:Connector = rm.getRandomConnector();
-			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
-			var targetPoint:Point = targetRing.predictPosition(pick, 2);
-			
-			pick.blink();
-			
-			
-			TweenMax.to(currentSprite, 2, { x:targetPoint.x, y:targetPoint.y,
-				scale: targetRing.realScale, alpha: targetRing.scaleX+.1,
-				motionBlur:{strength: 2, quality: 4}, ease:Cubic.easeInOut,
-				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick]
-			});
-			
-		}
-		
-		*/
-		
 		
 		
 	}

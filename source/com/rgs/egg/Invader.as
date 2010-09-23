@@ -27,7 +27,6 @@ package com.rgs.egg
 			invaders = new Array();
 			invaders = [new invader1(), new invader2(), new invader3(), new invader4()];
 			invasionOverSignal = new Signal();
-			trace("INVADERS ARE : " + invaders);
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 			
 		}
@@ -51,9 +50,7 @@ package com.rgs.egg
 			if (invaders.length > 0)
 			{
 				
-				
 				theInvader = invaders.shift();
-				trace("\n\nINVADING! " + invaders);
 				
 				leftSide = Boolean(Math.round(Math.random()));
 				
@@ -82,10 +79,8 @@ package com.rgs.egg
 		
 		private function putback(which:MovieClip):void
 		{
-			trace("       ==> PUTTING BACK: " + which);
 			which.gotoAndStop(1);
 			invaders.push(which);
-			trace(which);
 			invasionOverSignal.dispatch();
 		}
 	}

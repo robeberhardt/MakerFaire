@@ -57,15 +57,12 @@ package com.rgs.rings
 		public function getRandomConnector():Connector
 		{
 			var pickIndex:int = Math.floor(Math.random()*availableConnectors.length);
-			trace("pickIndex: " + pickIndex);
 			var pickValue:Array = availableConnectors.splice(pickIndex, 1)[0];
-			trace("pickValue: " + pickValue);
 			
 			usedConnectors.push(pickValue);
 		
 			var connector:Connector = Ring(ringArray[pickValue[0]]).getConnectorByIndex(pickValue[1]);
 			
-			trace("used: " + usedConnectors);
 			
 			return connector;
 		}
@@ -73,18 +70,15 @@ package com.rgs.rings
 		public function killRandomSprite():void
 		{
 			var killPick:int = Math.floor(Math.random()*usedConnectors.length);
-			trace("used before: " + usedConnectors);
 			var killPickValue:Array = usedConnectors.splice(killPick, 1)[0];
 			availableConnectors.push(killPickValue);
 			var connector:Connector = Ring(ringArray[killPickValue[0]]).getConnectorByIndex(killPickValue[1]);
 			MessageSprite(connector.passenger).depart();
-			trace("used: " + usedConnectors);
 			doneKillingSignal.dispatch();
 		}
 		
 		public function getRingByIndex(val:uint):Ring
 		{
-			trace("getting ring by index: " + val);
 			return ringArray[val];
 		}
 		

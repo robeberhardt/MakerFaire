@@ -71,16 +71,26 @@ package com.rgs.sprites
 		
 		public function arrive():void
 		{
+			graphics.clear();
+			graphics.lineStyle(2, 0xFF0000, 1);
+			graphics.drawRect(-(bitmapHolder.width*.5), -(bitmapHolder.height*.5), bitmapHolder.width, bitmapHolder.height);
+			graphics.endFill();
 			trace("arriving");
 			trace(x, y);
 			TweenMax.to(this, 3, { autoAlpha: 1 });
-			TweenMax.to(this, 3, { scaleX: 1, scaleY: 1, ease:Cubic.easeOut });
+			TweenMax.to(this, 3, { scale: 1, ease:Cubic.easeOut });
 			TweenMax.to(this, 4, { delay: 1, glowFilter:{strength: 0, blurX: 0, blurY: 0} });
 		}
 		
 		public function depart():void
 		{
-			TweenMax.to(this, 3, { alpha: 0 });
+			fresh = false;
+			TweenMax.to(this, 3, { alpha: 0, onComplete: recycle });
+		}
+		
+		private function recycle():void
+		{
+			trace("recycling " + this);
 		}
 
 	}

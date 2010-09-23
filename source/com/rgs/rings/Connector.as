@@ -2,6 +2,7 @@ package com.rgs.rings
 {
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Bounce;
+	import com.rgs.sprites.MessageSprite;
 	import com.rgs.utils.Label;
 	
 	import flash.display.Sprite;
@@ -18,7 +19,7 @@ package com.rgs.rings
 		private var _angle : Number;
 		private var _scale : Number;
 		private var _ring : Ring;
-		
+		public var passenger : MessageSprite;
 	
 		
 		public function Connector(radius:Number=40, fillcolor:uint=0xff0000)
@@ -28,6 +29,7 @@ package com.rgs.rings
 			angle = 0;
 			scale = 1;
 			_active = false;
+			passenger = null;
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 			
 		}

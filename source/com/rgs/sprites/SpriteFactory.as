@@ -5,6 +5,7 @@ package com.rgs.sprites
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
+	import flash.display.BlendMode;
 	import flash.display.Sprite;
 	import flash.events.TimerEvent;
 	import flash.text.AntiAliasType;
@@ -87,7 +88,6 @@ package com.rgs.sprites
 			field.wordWrap = true;
 			field.width = maxWidth;
 			field.embedFonts = true;
-//			addChild(field);
 			
 			wordsArray = new Array();
 			spriteArray = new Array();
@@ -142,27 +142,22 @@ package com.rgs.sprites
 			var validCount:int = 0;
 			for (var i:int=0; i<stf.textFields.length; i++)
 			{
-				//trace("i: " + i);
 				var formattedWord:String = stf.textFields[i].text;
 				for (var j:int=0; j<wordsArray.length; j++)
 				{
-					//trace("   j: " + j);
 					var origWord:String = wordsArray[j];
 					
 					if (formattedWord == wordsArray[j]) 
 					{
-						//trace(formattedWord + " matches " + origWord + "... VALID");
 						validCount ++;
 					}
 				}
 			}
 			
 			stf.destroy();
-			//trace("after loops, valid count " + validCount);
 			
 			if (validCount < wordsArray.length)
 			{
-				//trace("that's not enough");
 				newSize --;
 				format.size = newSize;
 				field.setTextFormat(format);
@@ -286,11 +281,11 @@ package com.rgs.sprites
 				var bData:BitmapData = new BitmapData(theField.textWidth, theField.textHeight, true, 0x00000000);
 				bData.draw(theField, null, null, null, null, true);
 				var bmap:Bitmap = new Bitmap(bData); 
-				//bmap.blendMode = BlendMode.INVERT;
+//				bmap.blendMode = BlendMode.INVERT;
 				bmap.smoothing = true;
 				theSprite.bitmapHolder.addChild(bmap);
 				bmap.y = yOffset;
-				bmap.x = Math.round(maxWidth*.5) - Math.round(bmap.width * .5);
+				bmap.x = Math.round(maxWidth*.5) - Math.round(bmap.width * .5)+15;
 				yOffset += (theField.textHeight * .8);
 			}
 			
@@ -301,153 +296,5 @@ package com.rgs.sprites
 			
 			singleSpriteCompleteSignal.dispatch();
 		}
-		
-		/*
-		private function makeSprites(fields:Array):void
-		{
-			trace("making sprites from:");
-			for (var x:int = 0; x < fields.length; x++)
-			{
-				trace(fields[x].text);
-			}
-			SpriteQueue.getInstance().spriteQueueReadySignal.addOnce(function(mSprite:MessageSprite)
-			{
-				trace("");
-			});
-		}
-		*/
-		
-		/*
-		private function makeSprites(fields:Array):void
-		{
-			trace("making sprites from:\n");
-			for (var x:int = 0; x < fields.length; x++)
-			{
-				trace(fields[x].text);
-			}
-			var spriteArray:Array = new Array();
-			
-			for (var i:int=0; i<fields.length; i++)
-			{	trace("\ni: " + i);
-				SpriteManager.getInstance().mSpriteSignal.addOnce(function(mSprite:MessageSprite)
-				{
-					trace("got mSprite: " + mSprite);
-					var innerYoffset:Number = 0;
-					
-					for (var j:int=0; j<fields[i].length; j++)
-					{
-						trace("i: " + i + ", j: " + j);
-						var theField:TextField = fields[i][j];
-						var theFormat:TextFormat = theField.getTextFormat();
-						theField.text = " " + theField.text + " \n";
-						theField.setTextFormat(theFormat);
-						var bData:BitmapData = new BitmapData(theField.textWidth, theField.textHeight, true, 0x00000000);
-						bData.draw(theField, null, null, null, null, true);
-						var bmap:Bitmap = new Bitmap(bData); 
-						//bmap.blendMode = BlendMode.INVERT;
-						bmap.smoothing = true;
-						mSprite.bitmapHolder.addChild(bmap);
-						bmap.y = innerYoffset;
-						bmap.x = Math.round(maxWidth*.5) - Math.round(bmap.width * .5);
-						innerYoffset += (theField.textHeight * .8);
-					}
-					
-					mSprite.bitmapHolder.x = -Math.round(mSprite.bitmapHolder.width * .5);
-					mSprite.bitmapHolder.x = -Math.round(mSprite.bitmapHolder.width * .5);
-					mSprite.bitmapHolder.y = -Math.round(mSprite.bitmapHolder.height * .5);		
-					trace("   --> pushing " + mSprite);
-					spriteArray.push(mSprite);
-					
-				});
-				
-				SpriteManager.getInstance().getNextSprite();
-			}
-			
-		}
-		*/
-		
-		/*
-		private function testLineCount(e:TimerEvent):void
-		{
-			testTimer.stop();
-			
-			
-			stf = new SplitTextField(field, "lines");
-			
-			var numlines:Number = stf.textFields.length;
-			trace("testing line count - numlines: " + numlines);
-			
-			if (numlines > 9)
-			{
-				trace("we're over 9 lines");
-				newSize --;
-				format.size = newSize;
-				field.setTextFormat(format);
-				field.width = 300;
-				
-				//stf.destroy();
-				testTimer.start();
-			}
-			else
-			{
-				
-				trace("we're under 9 lines");
-				//stf = new SplitTextField(field, "lines");
-				//lineCount = stf.textFields.length;
-				
-				// length of array indicated number of messages
-				// value of each member of array indicates line count for that message
-				
-				if (numlines <= 3)
-				{
-					makeFieldGroups(stf.textFields, [3]);
-				}
-				else if (numlines ==4)
-				{
-					makeFieldGroups(stf.textFields, [2, 2]);
-				}
-				else if (numlines == 5) 
-				{
-					makeFieldGroups(stf.textFields, [3, 2]);
-				}
-				else if (numlines == 6)
-				{
-					makeFieldGroups(stf.textFields, [3, 3]);
-				}
-				else if (numlines == 7)
-				{
-					makeFieldGroups(stf.textFields, [2, 2, 3]);
-				}
-				else if (numlines == 8)
-				{
-					makeFieldGroups(stf.textFields, [3, 3, 2]);
-				}
-				else
-				{
-					makeFieldGroups(stf.textFields, [3, 3, 3]);
-				}
-			}
-		}
-		*/
-		
-
-		
-		
-		
-//		private function makeFieldGroups(fields:Array, pattern:Array):void
-//		{
-//			trace("fields array length: " + fields.length + ", pattern: " + pattern);
-//			var index:int = 0;
-//			
-//			for (var i:int=0; i < pattern.length; i++)
-//			{
-//				mFields = new Array();
-//				mFields.push(fields.slice(index, index+pattern[i]));
-//				makeSprites(mFields);
-//				index += pattern[i];
-//			}
-//		}
-		
-		
 	}
 }

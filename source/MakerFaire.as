@@ -35,7 +35,8 @@ package
 		private var pfield				: ParallaxField;
 		
 		private var stats				: Stats;
-		private var timer				: Timer;
+		private var queueTimer				: Timer;
+		private var hookupTimer				: Timer;
 		
 		private var currentSprite		: MessageSprite;
 		private var currentMessage		: Message;
@@ -77,16 +78,19 @@ package
 			
 			TweenMax.to(this, 3, { alpha: 1 } );
 			
-			timer = new Timer(5000, 0);
-			timer.addEventListener(TimerEvent.TIMER, mainLoop);
-			timer.start();
+			queueTimer = new Timer(1000, 0);
+			queueTimer.addEventListener(TimerEvent.TIMER, mainLoop);
+			queueTimer.start();
+			
+			hookupTimer = new Timer(1000, 0);
+			hookupTimer.addEventListener(TimerEvent.TIMER, hookup);
 			
 		
 		}
 		
 		private function mainLoop(e:TimerEvent):void
 		{
-			timer.stop();
+			queueTimer.stop();
 			SpriteQueue.getInstance().emptySignal.add(onEmpty);
 			SpriteQueue.getInstance().nextSpriteSignal.addOnce(gotNextSprite);
 			SpriteQueue.getInstance().getNextSprite();
@@ -95,17 +99,79 @@ package
 		private function gotNextSprite(theSprite:MessageSprite)
 		{
 			trace("GOT THE NEXT SPRITE! " + theSprite);
-			theSprite.x = stage.stageWidth * .5;
-			theSprite.y = stage.stageHeight * .5 + 200;
-			addChild(theSprite);
-			theSprite.arrive();
-			timer.start();
+			
+			if (rm.availableConnectors.length > 0)
+			{
+				theSprite.x = stage.stageWidth * .5;
+				theSprite.y = stage.stageHeight * .5 + 200;
+				addChild(theSprite);
+				theSprite.arrive();
+				currentSprite = theSprite;
+				hookupTimer.start();
+			}
+			else
+			{
+				// kill one and try again
+				rm.killRandomSprite();
+				queueTimer.start();
+			}
+			
 		}
 		
 		private function onEmpty():void
 		{
 			trace("we're empty, starting timer...");
-			timer.start();
+			queueTimer.start();
+		}
+		
+		private function hookup(e:TimerEvent):void
+		{
+			hookupTimer.stop();
+			
+			var hookupTime:Number = 2;
+			
+			if (currentSprite.parent != this)
+			{
+				var hookupPoint:Point = currentSprite.localToGlobal(new Point(currentSprite.x, currentSprite.y));
+				var newScale:Number = Ring(currentSprite.parent.parent).realScale;
+//				trace("newScale: " + newScale + ", from " + currentSprite.parent.parent);
+//				trace("\n---> newScale: " + newScale);
+				currentSprite.parent.removeChild(currentSprite);
+				currentSprite.scale = newScale;
+				currentSprite.x = hookupPoint.x;
+				currentSprite.y = hookupPoint.y;
+				addChild(currentSprite);
+			}
+			
+			var pick:Connector = rm.getRandomConnector();
+			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
+			var targetPoint:Point = targetRing.predictPosition(pick, hookupTime);
+			
+			//pick.blink();
+			
+			
+			TweenMax.to(currentSprite, hookupTime, { x:targetPoint.x, y:targetPoint.y,
+				scale: targetRing.realScale, alpha: targetRing.scaleX+.1,
+				motionBlur:{strength: 2, quality: 4}, ease:Cubic.easeInOut,
+				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick],
+				onUpdate: showProgress
+			});
+		}
+		
+		private function showProgress():void
+		{
+			trace("current sprite scale: " + currentSprite.scale);
+		}
+		
+		private function attachToTarget(what:*, where:Connector):void
+		{
+			where.addChild(what);
+			where.passenger = what;
+			what.x = what.y = 0;
+			what.scale = 1;
+			where.active = true;
+			
+			queueTimer.start();
 		}
 		
 		/*
@@ -202,12 +268,6 @@ package
 		*/
 		
 		
-		private function attachToTarget(what:*, where:Connector):void
-		{
-			where.addChild(what);
-			what.x = what.y = 0;
-			what.scale = 1;
-			where.active = true;
-		}
+		
 	}
 }

@@ -1,5 +1,6 @@
 package com.rgs.rings
 {
+	import com.rgs.sprites.MessageSprite;
 	import com.rgs.utils.Logger;
 	
 	import flash.display.Sprite;
@@ -11,7 +12,7 @@ package com.rgs.rings
 		private var count : uint = 5;
 		private var ringArray : Array;
 		private var offset : Number = .2;
-		private var speed : Number = .003;
+		private var speed : Number = .002;
 		private var radius : Number = 300;
 		public var availableConnectors : Array;
 		private var usedConnectors : Array;
@@ -62,6 +63,16 @@ package com.rgs.rings
 			trace("used: " + usedConnectors);
 			
 			return connector;
+		}
+		
+		public function killRandomSprite():void
+		{
+			var killPick:int = Math.floor(Math.random()*usedConnectors.length);
+			var killPickValue:Array = usedConnectors.splice(killPick, 1)[0];
+			availableConnectors.push(killPickValue);
+			var connector:Connector = Ring(ringArray[killPickValue[0]]).getConnectorByIndex(killPickValue[1]);
+			MessageSprite(connector.passenger).depart();
+			trace("used: " + usedConnectors);
 		}
 		
 		public function getRingByIndex(val:uint):Ring

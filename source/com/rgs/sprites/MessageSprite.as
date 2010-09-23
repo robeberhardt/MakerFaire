@@ -6,6 +6,7 @@ package com.rgs.sprites
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.filters.BlurFilter;
 	import flash.filters.GlowFilter;
 	
 	import org.osflash.signals.Signal;
@@ -41,9 +42,9 @@ package com.rgs.sprites
 			filters = [glow];
 			addChild(bitmapHolder);
 			if (_stf) { addChild(_stf); }
-//			graphics.beginFill(0x00FF00, 1);
-//			graphics.drawCircle(0, 0, 10);
-//			graphics.endFill();
+			graphics.beginFill(0x00FF00, 1);
+			graphics.drawCircle(0, 0, 10);
+			graphics.endFill();
 		}
 		
 		override public function toString():String
@@ -77,12 +78,12 @@ package com.rgs.sprites
 		
 		public function arrive():void
 		{
-			graphics.clear();
-			graphics.lineStyle(2, 0xFF0000, 1);
-			graphics.drawRect(-(bitmapHolder.width*.5), -(bitmapHolder.height*.5), bitmapHolder.width, bitmapHolder.height);
-			graphics.endFill();
-			trace("arriving");
-			trace(x, y);
+//			graphics.clear();
+//			graphics.lineStyle(2, 0xFF0000, 1);
+//			graphics.drawRect(-(bitmapHolder.width*.5), -(bitmapHolder.height*.5), bitmapHolder.width, bitmapHolder.height);
+//			graphics.endFill();
+//			trace("arriving");
+//			trace(x, y);
 			TweenMax.to(this, 3, { autoAlpha: 1 });
 			TweenMax.to(this, 3, { scale: 1, ease:Cubic.easeOut });
 			TweenMax.to(this, 4, { delay: 1, glowFilter:{strength: 0, blurX: 0, blurY: 0} });
@@ -100,10 +101,11 @@ package com.rgs.sprites
 			alpha = 0;
 			scale = 3;
 			busy = false;
-			glow.strength = 5;
-			glow.quality = 5;
-			glow.blurX = 15;
-			glow.blurY = 15;
+//			glow.strength = 5;
+//			glow.quality = 5;
+//			glow.blurX = 15;
+//			glow.blurY = 15;
+			TweenMax.to(this, .25, { glowFilter: {strength: 5, blurX: 15, blurY: 15}});
 			recycleSignal.dispatch(this);
 		}
 

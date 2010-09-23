@@ -111,39 +111,6 @@ package
 			hookupTimer.start();
 		}
 		
-		/*
-		private function gotNextSprite(theSprite:MessageSprite)
-		{
-			trace("GOT THE NEXT SPRITE! " + theSprite);
-			
-			if (rm.availableConnectors.length > 0)
-			{
-				theSprite.x = stage.stageWidth * .5;
-				theSprite.y = stage.stageHeight * .5 + 200;
-				addChild(theSprite);
-				theSprite.arrive();
-				currentSprite = theSprite;
-				hookupTimer.start();
-			}
-			else
-			{
-				// kill one and try again
-				rm.doneKillingSignal.addOnce(function() 
-				{
-					trace("      --> done killing.");
-					theSprite.x = stage.stageWidth * .5;
-					theSprite.y = stage.stageHeight * .5 + 200;
-					addChild(theSprite);
-					theSprite.arrive();
-					currentSprite = theSprite;
-					hookupTimer.start();
-				});
-				rm.killRandomSprite();
-			}
-			
-		}
-		*/
-		
 		private function onEmpty():void
 		{
 			trace("we're empty, starting timer...");
@@ -182,7 +149,7 @@ package
 			
 			
 			TweenMax.to(currentSprite, hookupTime, { x:targetPoint.x, y:targetPoint.y,
-				scale: targetRing.realScale, alpha: targetRing.scaleX+.1,
+				scale: targetRing.realScale, alpha: 1 - (targetRing.index * .1),
 				motionBlur:{strength: 2, quality: 4}, ease:Cubic.easeInOut,
 				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick]
 			});

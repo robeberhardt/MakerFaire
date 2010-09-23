@@ -100,10 +100,17 @@ package com.rgs.sprites
 			{
 				tempSprites.push(new MessageSprite());
 			}
+			
+			testTimer = new Timer(10);
+			testTimer.addEventListener(TimerEvent.TIMER, testTruncation);
 		}
 		
 		public function prepare(m:String):void
 		{
+			field.width = maxWidth;
+			
+			
+			
 			trace("making from " + m);
 			// first we'll remove double-spaces
 			while(m.indexOf("  ") != -1)
@@ -130,8 +137,7 @@ package com.rgs.sprites
 			wordsArray = field.text.split(" ");
 			
 			newSize = origSize;
-			testTimer = new Timer(10);
-			testTimer.addEventListener(TimerEvent.TIMER, testTruncation);
+			
 			testTimer.start();
 		}
 		
@@ -275,7 +281,7 @@ package com.rgs.sprites
 				theSprite.bitmapHolder.removeChildAt(0);
 			}
 			
-			var yOffset:Number = 0;
+			var yOffset:Number = -30;
 			for (var j:int=0; j<fields.length; j++)
 			{
 				var theField:TextField = fields[j];
@@ -291,7 +297,8 @@ package com.rgs.sprites
 				bmap.smoothing = true;
 				theSprite.bitmapHolder.addChild(bmap);
 				bmap.y = yOffset;
-				bmap.x = Math.round(maxWidth*.5) - Math.round(bmap.width * .5)+15;
+//				bmap.x = Math.round(maxWidth*.5) - Math.round(bmap.width * .5)+15;
+				bmap.x = -Math.round(bmap.width * .5);
 				yOffset += (theField.textHeight * .8);
 			}
 			

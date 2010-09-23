@@ -107,11 +107,11 @@ package com.rgs.txt
 						
 			xmlLength = theXML..array.dict.length();
 			
-			trace("loadComplete - xmlLength = " + xmlLength);
+			//trace("loadComplete - xmlLength = " + xmlLength);
 			
 			if (xmlLength-1 < lastMessage)
 			{
-				trace("things got smaller...");
+				//trace("things got smaller...");
 				lastMessage = xmlLength-1;
 				currentMessage = lastMessage;
 			}
@@ -148,7 +148,7 @@ package com.rgs.txt
 		
 		public function getNextMessage():Message
 		{
-			trace("getNextMessage::: lastMessage: " + lastMessage + ", currentMessage: " + currentMessage);
+			//trace("getNextMessage::: lastMessage: " + lastMessage + ", currentMessage: " + currentMessage);
 			if (lastMessage > currentMessage)
 			{
 				currentMessage ++;

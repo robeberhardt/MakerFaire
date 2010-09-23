@@ -278,9 +278,11 @@ package com.rgs.sprites
 				var theFormat:TextFormat = theField.getTextFormat();
 				theField.text = " " + theField.text + " \n";
 				theField.setTextFormat(theFormat);
+				trace("     --->drawing " + theField.textWidth + ":" + theField.textHeight + "\n\n");
 				var bData:BitmapData = new BitmapData(theField.textWidth, theField.textHeight, true, 0x00000000);
 				bData.draw(theField, null, null, null, null, true);
 				var bmap:Bitmap = new Bitmap(bData); 
+				
 //				bmap.blendMode = BlendMode.INVERT;
 				bmap.smoothing = true;
 				theSprite.bitmapHolder.addChild(bmap);
@@ -289,8 +291,9 @@ package com.rgs.sprites
 				yOffset += (theField.textHeight * .8);
 			}
 			
-			theSprite.bitmapHolder.x = -Math.round(theSprite.bitmapHolder.width * .5);
-			theSprite.bitmapHolder.y = -Math.round(theSprite.bitmapHolder.height * .5);		
+//			theSprite.bitmapHolder.x = -Math.round(theSprite.bitmapHolder.width * .5);
+//			theSprite.bitmapHolder.y = -Math.round(theSprite.bitmapHolder.height * .5);	
+			
 			
 			theSprite.fresh = true;
 			

@@ -8,7 +8,7 @@
 			<key>Address</key>
 			<string>9178226513</string>
 			<key>Message</key>
-			<string>1 word word word</string>
+			<string>Message #10</string>
 			<key>State</key>
 			<integer>1</integer>
 			<key>TimeStamp</key>
@@ -18,87 +18,7 @@
 			<key>Address</key>
 			<string>9178226513</string>
 			<key>Message</key>
-			<string>1 this will be sweet</string>
-			<key>State</key>
-			<integer>1</integer>
-			<key>TimeStamp</key>
-			<string>2006-04-20 15:43:56 -0400</string>
-		</dict>
-		<dict>
-			<key>Address</key>
-			<string>9178226513</string>
-			<key>Message</key>
-			<string>oh really?</string>
-			<key>State</key>
-			<integer>1</integer>
-			<key>TimeStamp</key>
-			<string>2006-04-20 15:43:56 -0400</string>
-		</dict>
-		<dict>
-			<key>Address</key>
-			<string>9178226513</string>
-			<key>Message</key>
-			<string>1 word word word</string>
-			<key>State</key>
-			<integer>1</integer>
-			<key>TimeStamp</key>
-			<string>2006-04-20 15:43:56 -0400</string>
-		</dict>
-		<dict>
-			<key>Address</key>
-			<string>9178226513</string>
-			<key>Message</key>
-			<string>1 this will be sweet</string>
-			<key>State</key>
-			<integer>1</integer>
-			<key>TimeStamp</key>
-			<string>2006-04-20 15:43:56 -0400</string>
-		</dict>
-		<dict>
-			<key>Address</key>
-			<string>9178226513</string>
-			<key>Message</key>
-			<string>Happy bar mitzvah I hope everything is amazing, woo hoo. yee haw. go for it!</string>
-			<key>State</key>
-			<integer>1</integer>
-			<key>TimeStamp</key>
-			<string>2006-04-20 15:43:56 -0400</string>
-		</dict>
-		<dict>
-			<key>Address</key>
-			<string>9178226513</string>
-			<key>Message</key>
-			<string>it works</string>
-			<key>State</key>
-			<integer>1</integer>
-			<key>TimeStamp</key>
-			<string>2006-04-20 15:43:56 -0400</string>
-		</dict>
-		<dict>
-			<key>Address</key>
-			<string>9178226513</string>
-			<key>Message</key>
-			<string>oh really?</string>
-			<key>State</key>
-			<integer>1</integer>
-			<key>TimeStamp</key>
-			<string>2006-04-20 15:43:56 -0400</string>
-		</dict>
-		<dict>
-			<key>Address</key>
-			<string>9178226513</string>
-			<key>Message</key>
-			<string>Lorem ipsum dolor sit amet, consectetur adipiscing volutpat!</string>
-			<key>State</key>
-			<integer>1</integer>
-			<key>TimeStamp</key>
-			<string>2006-04-20 15:43:56 -0400</string>
-		</dict>
-		<dict>
-			<key>Address</key>
-			<string>9178226513</string>
-			<key>Message</key>
-			<string>1 blah blah blah</string>
+			<string>Message #9</string>
 			<key>State</key>
 			<integer>1</integer>
 			<key>TimeStamp</key>
@@ -116,13 +36,65 @@
 		</dict>
 		<dict>
 			<key>Address</key>
-			<string>19176091707</string>
+			<string>9178226513</string>
 			<key>Message</key>
-			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem dui, non auctor justo. Praesent volutpat posuere!</string>
+			<string>Message #8</string>
 			<key>State</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>TimeStamp</key>
-			<string>2007-07-17 12:38:40 -0400</string>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+
+		
+			<dict>
+				<key>Address</key>
+				<string>9178226513</string>
+				<key>Message</key>
+				<string>Message #7</string>
+				<key>State</key>
+				<integer>1</integer>
+				<key>TimeStamp</key>
+				<string>2006-04-20 15:43:56 -0400</string>
+			</dict>
+			<dict>
+				<key>Address</key>
+				<string>9178226513</string>
+				<key>Message</key>
+				<string>Message #6</string>
+				<key>State</key>
+				<integer>1</integer>
+				<key>TimeStamp</key>
+				<string>2006-04-20 15:43:56 -0400</string>
+			</dict>
+			<dict>
+				<key>Address</key>
+				<string>9178226513</string>
+				<key>Message</key>
+				<string>Message #5</string>
+				<key>State</key>
+				<integer>1</integer>
+				<key>TimeStamp</key>
+				<string>2006-04-20 15:43:56 -0400</string>
+			</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>oh really?</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>1 blah blah blah</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
 		</dict>
 		<dict>
 			<key>Address</key>
@@ -145,6 +117,127 @@
 			<key>TimeStamp</key>
 			<string>2006-04-20 15:43:56 -0400</string>
 		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>it works</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+
 	</array>
 </dict>
 </plist>

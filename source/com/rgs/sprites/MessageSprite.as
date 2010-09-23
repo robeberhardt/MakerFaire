@@ -31,7 +31,7 @@ package com.rgs.sprites
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			
-			var glow:GlowFilter = new GlowFilter(0xffffff, 1, 15, 15, 5, 5);
+			glow = new GlowFilter(0xffffff, 1, 15, 15, 5, 5);
 			filters = [glow];
 			addChild(bitmapHolder);
 			if (_stf) { addChild(_stf); }
@@ -84,13 +84,20 @@ package com.rgs.sprites
 		
 		public function depart():void
 		{
-			fresh = false;
-			TweenMax.to(this, 3, { alpha: 0, onComplete: recycle });
+			TweenMax.to(this, .5, { alpha: 0, onComplete: recycle });
 		}
 		
 		private function recycle():void
 		{
 			trace("recycling " + this);
+			visible = false;
+			alpha = 0;
+			scale = 3;
+			fresh = false;
+			glow.strength = 5;
+			glow.quality = 5;
+			glow.blurX = 15;
+			glow.blurY = 15;
 		}
 
 	}

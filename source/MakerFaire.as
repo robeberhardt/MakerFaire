@@ -49,7 +49,9 @@ package
 			alpha = 0;
 			TweenPlugin.activate([MotionBlurPlugin]);
 			Logger.setMode(Logger.LOG_INTERNAL_ONLY);
-			SpriteQueue.getInstance();
+
+			SpriteQueue.getInstance().emptySignal.add(onEmpty);
+			
 			MessageLoader.getInstance().loadedSignal.addOnce(init);
 			MessageLoader.getInstance().load();
 
@@ -78,12 +80,16 @@ package
 			
 			TweenMax.to(this, 3, { alpha: 1 } );
 			
-			queueTimer = new Timer(1000, 0);
-			queueTimer.addEventListener(TimerEvent.TIMER, mainLoop);
-			queueTimer.start();
-			
 			hookupTimer = new Timer(1000, 0);
 			hookupTimer.addEventListener(TimerEvent.TIMER, hookup);
+			
+			queueTimer = new Timer(1000, 0);
+			queueTimer.addEventListener(TimerEvent.TIMER, mainLoop);
+			
+			// and away we go!
+			queueTimer.start();
+			
+			
 			
 		
 		}
@@ -91,7 +97,6 @@ package
 		private function mainLoop(e:TimerEvent):void
 		{
 			queueTimer.stop();
-			SpriteQueue.getInstance().emptySignal.add(onEmpty);
 			SpriteQueue.getInstance().nextSpriteSignal.addOnce(gotNextSprite);
 			SpriteQueue.getInstance().getNextSprite();
 		}
@@ -112,8 +117,17 @@ package
 			else
 			{
 				// kill one and try again
+				rm.doneKillingSignal.addOnce(function() 
+				{
+					trace("      --> done killing.");
+					theSprite.x = stage.stageWidth * .5;
+					theSprite.y = stage.stageHeight * .5 + 200;
+					addChild(theSprite);
+					theSprite.arrive();
+					currentSprite = theSprite;
+					hookupTimer.start();
+				});
 				rm.killRandomSprite();
-				queueTimer.start();
 			}
 			
 		}
@@ -153,15 +167,10 @@ package
 			TweenMax.to(currentSprite, hookupTime, { x:targetPoint.x, y:targetPoint.y,
 				scale: targetRing.realScale, alpha: targetRing.scaleX+.1,
 				motionBlur:{strength: 2, quality: 4}, ease:Cubic.easeInOut,
-				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick],
-				onUpdate: showProgress
+				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick]
 			});
 		}
-		
-		private function showProgress():void
-		{
-			trace("current sprite scale: " + currentSprite.scale);
-		}
+
 		
 		private function attachToTarget(what:*, where:Connector):void
 		{

@@ -6,16 +6,19 @@ package com.rgs.rings
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
+	import org.osflash.signals.Signal;
+	
 	public class RingMaster extends Sprite
 	{
 		
-		private var count : uint = 5;
+		private var count : uint = 1;
 		private var ringArray : Array;
 		private var offset : Number = .2;
 		private var speed : Number = .002;
 		private var radius : Number = 300;
 		public var availableConnectors : Array;
 		private var usedConnectors : Array;
+		public var doneKillingSignal : Signal;
 		
 		public function RingMaster()
 		{
@@ -46,7 +49,7 @@ package com.rgs.rings
 				}
 			}
 			
-			Logger.log(availableConnectors);
+			doneKillingSignal = new Signal();
 		}
 		
 		public function getRandomConnector():Connector
@@ -68,11 +71,13 @@ package com.rgs.rings
 		public function killRandomSprite():void
 		{
 			var killPick:int = Math.floor(Math.random()*usedConnectors.length);
+			trace("used before: " + usedConnectors);
 			var killPickValue:Array = usedConnectors.splice(killPick, 1)[0];
 			availableConnectors.push(killPickValue);
 			var connector:Connector = Ring(ringArray[killPickValue[0]]).getConnectorByIndex(killPickValue[1]);
 			MessageSprite(connector.passenger).depart();
 			trace("used: " + usedConnectors);
+			doneKillingSignal.dispatch();
 		}
 		
 		public function getRingByIndex(val:uint):Ring

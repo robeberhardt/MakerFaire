@@ -23,7 +23,7 @@ package com.rgs.sprites
 		public var nextSpriteSignal					: Signal;
 		public var emptySignal						: Signal;
 		
-		private static const MAX_SPRITES	: int = 100;
+		private static const MAX_SPRITES	: int = 10;
 		
 		public function SpriteQueue(name:String="SpriteManager")
 		{
@@ -86,8 +86,9 @@ package com.rgs.sprites
 		{
 
 			// do we have an available sprite in the queue?
+			trace("trying to get next sprite - currentSpriteIndex = " + currentSpriteIndex + ", length = " + spriteQueue.length);
 			var nextPossible:int = currentSpriteIndex + 1;
-			if (nextPossible > spriteQueue.length) { nextPossible = 0; }
+			if (nextPossible > spriteQueue.length-1) { nextPossible = 0; }
 			
 			var candidate:MessageSprite = spriteQueue[nextPossible];
 			if (candidate.fresh)
@@ -119,9 +120,10 @@ package com.rgs.sprites
 						
 						for (var i:int=0; i<count; i++)
 						{
+							trace("i=" + i + ", nextUpdateableSpriteIndex =" + nextUpdateableSpriteIndex);
 							tempArray.push(spriteQueue[nextUpdateableSpriteIndex]);
 							nextUpdateableSpriteIndex ++;
-							if (nextUpdateableSpriteIndex > spriteQueue.length)
+							if (nextUpdateableSpriteIndex > spriteQueue.length-1)
 							{
 								nextUpdateableSpriteIndex = 0;
 							}

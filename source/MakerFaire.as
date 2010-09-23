@@ -25,6 +25,7 @@ package
 	import flash.text.Font;
 	import flash.utils.Timer;
 	
+	
 	import net.hires.debug.Stats;
 	
 	public class MakerFaire extends MovieClip
@@ -42,18 +43,21 @@ package
 		private var currentMessage		: Message;
 		//public var timeMultiplier		: Number = 1.0;
 		
+		private var pick				: Connector;
+		
 		private var ball				: Ball;
 		
 		public function MakerFaire()
 		{
 			alpha = 0;
-			TweenPlugin.activate([MotionBlurPlugin]);
+			TweenPlugin.activate([MotionBlurPlugin, DynamicPropsPlugin]);
 			Logger.setMode(Logger.LOG_INTERNAL_ONLY);
 
 			SpriteQueue.getInstance().emptySignal.add(onEmpty);
+			addChild(SpriteFactory.getInstance());
 			
 			MessageLoader.getInstance().loadedSignal.addOnce(init);
-			MessageLoader.getInstance().load();
+			MessageLoader.getInstance().load("long.plist");
 
 		}
 		
@@ -80,9 +84,11 @@ package
 			
 			TweenMax.to(this, 3, { alpha: 1 } );
 			
+			//hookupTimer = new Timer(6000, 0);
 			hookupTimer = new Timer(1000, 0);
 			hookupTimer.addEventListener(TimerEvent.TIMER, hookup);
 			
+			//queueTimer = new Timer(5000, 0);
 			queueTimer = new Timer(1000, 0);
 			queueTimer.addEventListener(TimerEvent.TIMER, mainLoop);
 			
@@ -141,19 +147,38 @@ package
 				addChild(currentSprite);
 			}
 			
-			var pick:Connector = rm.getRandomConnector();
+			pick = rm.getRandomConnector();
 			var targetRing:Ring = rm.getRingByIndex(pick.ring.index);
 			var targetPoint:Point = targetRing.predictPosition(pick, hookupTime);
 			
 			//pick.blink();
 			
+			TweenMax.to(currentSprite, hookupTime, { dynamicProps: {  x:getTargetPointX, y:getTargetPointY },
+				scale: targetRing.realScale, alpha: 1 - (targetRing.index * .1),
+				motionBlur:{strength: 2, quality: 4}, ease:Cubic.easeInOut,
+				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick]
+			});
 			
+			
+			/*
 			TweenMax.to(currentSprite, hookupTime, { x:targetPoint.x, y:targetPoint.y,
 				scale: targetRing.realScale, alpha: 1 - (targetRing.index * .1),
 				motionBlur:{strength: 2, quality: 4}, ease:Cubic.easeInOut,
 				onComplete:attachToTarget, onCompleteParams: [currentSprite, pick]
 			});
+			*/
 		}
+		
+		private function getTargetPointX():Number
+		{
+			return pick.parent.localToGlobal(new Point(pick.x, pick.y)).x;
+		}
+		
+		private function getTargetPointY():Number
+		{
+			return pick.parent.localToGlobal(new Point(pick.x, pick.y)).y;
+		}
+
 
 		
 		private function attachToTarget(what:*, where:Connector):void

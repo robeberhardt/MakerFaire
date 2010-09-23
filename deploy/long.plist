@@ -4,6 +4,257 @@
 <dict>
 	<key>Contents</key>
 	<array>
+		
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>GUACAMOLE!</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>nineteen</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>eighteen</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>seventeen</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>sixteen</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>fifteen</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>fourteen</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>thirteen</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>twelve</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>eleven</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>ten</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>nine</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>eight</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>seven</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>19176091707</string>
+			<key>Message</key>
+			<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida, elit metus!</string>
+			<key>State</key>
+			<integer>0</integer>
+			<key>TimeStamp</key>
+			<string>2007-07-17 12:38:40 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>six</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>five</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>four</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>three</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+			<dict>
+				<key>Address</key>
+				<string>9178226513</string>
+				<key>Message</key>
+				<string>BUCKLE my SHOE!</string>
+				<key>State</key>
+				<integer>1</integer>
+				<key>TimeStamp</key>
+				<string>2006-04-20 15:43:56 -0400</string>
+			</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>two</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+		<dict>
+			<key>Address</key>
+			<string>9178226513</string>
+			<key>Message</key>
+			<string>one</string>
+			<key>State</key>
+			<integer>1</integer>
+			<key>TimeStamp</key>
+			<string>2006-04-20 15:43:56 -0400</string>
+		</dict>
+			<dict>
+				<key>Address</key>
+				<string>9178226513</string>
+				<key>Message</key>
+				<string>BUCKLEmySHOE!</string>
+				<key>State</key>
+				<integer>1</integer>
+				<key>TimeStamp</key>
+				<string>2006-04-20 15:43:56 -0400</string>
+			</dict>
+				<dict>
+					<key>Address</key>
+					<string>9178226513</string>
+					<key>Message</key>
+					<string>BUCKLEmy SHOE!</string>
+					<key>State</key>
+					<integer>1</integer>
+					<key>TimeStamp</key>
+					<string>2006-04-20 15:43:56 -0400</string>
+				</dict>
+					<dict>
+						<key>Address</key>
+						<string>9178226513</string>
+						<key>Message</key>
+						<string>BUCKLE my SHOE!</string>
+						<key>State</key>
+						<integer>1</integer>
+						<key>TimeStamp</key>
+						<string>2006-04-20 15:43:56 -0400</string>
+					</dict>
 		<dict>
 			<key>Address</key>
 			<string>9178226513</string>
@@ -88,7 +339,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -218,7 +469,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -348,7 +599,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -478,7 +729,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -608,7 +859,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -738,7 +989,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -868,7 +1119,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -998,7 +1249,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -1128,7 +1379,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -1258,7 +1509,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -1388,7 +1639,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -1518,7 +1769,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -1648,7 +1899,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -1778,7 +2029,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -1908,7 +2159,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -2038,7 +2289,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>
@@ -2168,7 +2419,7 @@
 			<key>Address</key>
 			<string>19176091707</string>
 			<key>Message</key>
-			<string>Please stop touching me there daddy. The teacher says it's inappropriate.</string>
+			<string>Please stop touching me there. It's inappropriate.</string>
 			<key>State</key>
 			<integer>0</integer>
 			<key>TimeStamp</key>

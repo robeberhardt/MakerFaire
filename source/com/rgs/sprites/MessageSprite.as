@@ -22,12 +22,14 @@ package com.rgs.sprites
 		public var recycleSignal				: Signal;
 		public var busySignal					: Signal;
 		
+		private static const FULL_SCALE			: Number = 4;
+		
 		public function MessageSprite()
 		{
 			bitmapHolder = new Sprite();
 			visible = false;
 			alpha = 0;
-			scale = 3;
+			scale = FULL_SCALE;
 			busy = false;
 			recycleSignal = new Signal(MessageSprite);
 			busySignal = new Signal(MessageSprite);
@@ -99,7 +101,7 @@ package com.rgs.sprites
 			trace("recycling " + this);
 			visible = false;
 			alpha = 0;
-			scale = 3;
+			scale = FULL_SCALE;
 			busy = false;
 //			glow.strength = 5;
 //			glow.quality = 5;

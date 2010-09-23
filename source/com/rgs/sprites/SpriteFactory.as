@@ -7,6 +7,7 @@ package com.rgs.sprites
 	import flash.display.BitmapData;
 	import flash.display.BlendMode;
 	import flash.display.Sprite;
+	import flash.events.Event;
 	import flash.events.TimerEvent;
 	import flash.text.AntiAliasType;
 	import flash.text.TextField;
@@ -54,7 +55,7 @@ package com.rgs.sprites
 				throw new Error("Error: Instantiation failed: Use SpriteFactory.getInstance()");
 			} else {
 				this.name = name;
-				init();
+				if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 			}
 		}
 		
@@ -67,8 +68,11 @@ package com.rgs.sprites
 			return instance;
 		}
 		
-		private function init():void
+		private function init(e:Event=null):void
 		{
+			removeEventListener(Event.ADDED_TO_STAGE, init);
+			visible = false;
+			
 			origSize = 70;
 			maxWidth = 300;
 			
@@ -76,7 +80,7 @@ package com.rgs.sprites
 			format.font = FontLibrary.HELVETICA_BOLD;
 			format.size = origSize;
 			format.letterSpacing = -0.5;
-			format.leading = -10;
+			format.leading = -2;
 			format.align = TextFormatAlign.CENTER;
 			format.color = 0xFFFFFF;
 			
@@ -88,6 +92,7 @@ package com.rgs.sprites
 			field.wordWrap = true;
 			field.width = maxWidth;
 			field.embedFonts = true;
+			addChild(field);
 			
 			wordsArray = new Array();
 			spriteArray = new Array();
@@ -102,14 +107,18 @@ package com.rgs.sprites
 			}
 			
 			testTimer = new Timer(10);
-			testTimer.addEventListener(TimerEvent.TIMER, testTruncation);
+			//testTimer.addEventListener(TimerEvent.TIMER, testTruncation);
 		}
 		
 		public function prepare(m:String):void
 		{
+			testTimer.removeEventListener(TimerEvent.TIMER, testLineCount);
+			testTimer.addEventListener(TimerEvent.TIMER, testTruncation);
+			
 			field.width = maxWidth;
 			
-			
+			field.text = "";
+			format.size = origSize;
 			
 			trace("making from " + m);
 			// first we'll remove double-spaces
@@ -236,6 +245,7 @@ package com.rgs.sprites
 			stf = new SplitTextField(field, "lines");
 			
 			sourceFields = stf.textFields;
+			stf.destroy();
 			
 			// length of array indicated number of messages
 			// value of each member of array indicates line count for that message

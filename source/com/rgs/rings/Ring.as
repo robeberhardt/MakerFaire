@@ -71,7 +71,8 @@ package com.rgs.rings
 			var futureFrames:uint = time * stage.frameRate;
 			for (var i:int = 0; i < time * stage.frameRate; i++)
 			{
-				tempAngle += speed * (scale + .1);
+				//tempAngle += speed * (scale + .1);
+				tempAngle += speed * (realScale + .1);
 			}
 			var futurePoint:Point = new Point(Math.sin(tempAngle)*radius, Math.cos(tempAngle)*radius);
 			return this.localToGlobal(futurePoint);

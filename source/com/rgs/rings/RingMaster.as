@@ -11,10 +11,10 @@ package com.rgs.rings
 	public class RingMaster extends Sprite
 	{
 		
-		private var count : uint = 5;
+		private var count : uint = 1;
 		private var ringArray : Array;
 		private var offset : Number = .2;
-		private var speed : Number = .002;
+		private var speed : Number = .001;
 		private var radius : Number = 300;
 		public var availableConnectors : Array;
 		private var usedConnectors : Array;

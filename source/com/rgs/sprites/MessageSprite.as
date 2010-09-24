@@ -23,7 +23,8 @@ package com.rgs.sprites
 		public var busySignal					: Signal;
 		
 		private static const FULL_SCALE			: Number = 4;
-		private static const ARRIVE_MULTIPLIER	: Number = 1;
+		private static const ARRIVE_MULTIPLIER	: Number = .5;
+		private static const DEPART_MULTIPLIER	: Number = 1;
 		
 		public function MessageSprite()
 		{
@@ -90,13 +91,16 @@ package com.rgs.sprites
 //			trace("arriving");
 //			trace(x, y);
 			TweenMax.to(this, 3*ARRIVE_MULTIPLIER, { autoAlpha: 1 });
-			TweenMax.to(this, 3*ARRIVE_MULTIPLIER, { scale: 1, ease:Cubic.easeOut });
+			TweenMax.to(this, 3*ARRIVE_MULTIPLIER, { scale: 1.5, ease:Cubic.easeOut });
 			TweenMax.to(this, 4*ARRIVE_MULTIPLIER, { delay: 1, glowFilter:{strength: 0, blurX: 0, blurY: 0} });
 		}
 		
 		public function depart():void
 		{
-			TweenMax.to(this, .5, { alpha: 0, onComplete: recycle });
+//			TweenMax.to(this, .5, { alpha: 0, onComplete: recycle });
+			TweenMax.to(this, 1*DEPART_MULTIPLIER, { autoAlpha: 0, onComplete: recycle });
+			TweenMax.to(this, 1*DEPART_MULTIPLIER, { scaleX: 4, scaleY: .15, ease:Cubic.easeOut });
+			TweenMax.to(this, 1*DEPART_MULTIPLIER, { glowFilter:{strength: 8, blurX: 15, blurY: 15} });
 		}
 		
 		private function recycle():void

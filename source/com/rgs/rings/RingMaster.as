@@ -11,7 +11,7 @@ package com.rgs.rings
 	public class RingMaster extends Sprite
 	{
 		
-		private var count : uint = 5;
+		private var count : uint = 2;
 		private var ringArray : Array;
 		private var offset : Number = .2;
 		private var speed : Number = .001;
@@ -69,8 +69,12 @@ package com.rgs.rings
 		
 		public function killRandomSprite():void
 		{
+			trace("killing random sprite");
+			
 			var killPick:int = Math.floor(Math.random()*usedConnectors.length);
+			
 			var killPickValue:Array = usedConnectors.splice(killPick, 1)[0];
+			trace("killPickValue: " + killPickValue);
 			availableConnectors.push(killPickValue);
 			var connector:Connector = Ring(ringArray[killPickValue[0]]).getConnectorByIndex(killPickValue[1]);
 			MessageSprite(connector.passenger).depart();

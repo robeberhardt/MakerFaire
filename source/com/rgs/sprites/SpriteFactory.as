@@ -120,7 +120,7 @@ package com.rgs.sprites
 			field.text = "";
 			format.size = origSize;
 			
-			trace("making from " + m);
+			//trace("making from " + m);
 			// first we'll remove double-spaces
 			while(m.indexOf("  ") != -1)
 			{
@@ -241,7 +241,7 @@ package com.rgs.sprites
 		public function makeSprites(theSprites:Array):void
 		{
 			
-			trace("makeSprites:  "+ theSprites);
+			//trace("makeSprites:  "+ theSprites);
 			stf = new SplitTextField(field, "lines");
 			
 			sourceFields = stf.textFields;
@@ -262,7 +262,7 @@ package com.rgs.sprites
 			
 			if (fieldGroupCounter < pattern.length)
 			{
-				trace("makeNextFieldGroup: counter: " + fieldGroupCounter + ", index: " + fieldGroupIndex);
+				//trace("makeNextFieldGroup: counter: " + fieldGroupCounter + ", index: " + fieldGroupIndex);
 				
 				singleSpriteCompleteSignal.addOnce(function()
 				{
@@ -284,7 +284,7 @@ package com.rgs.sprites
 		
 		private function updateSprite(theSprite:MessageSprite, fields:Array):void
 		{
-			trace("updating sprite: " + theSprite + ", fields: " + fields);
+			//trace("updating sprite: " + theSprite + ", fields: " + fields);
 			
 			while (theSprite.bitmapHolder.numChildren > 0)
 			{
@@ -298,7 +298,7 @@ package com.rgs.sprites
 				var theFormat:TextFormat = theField.getTextFormat();
 				theField.text = " " + theField.text + " \n";
 				theField.setTextFormat(theFormat);
-				trace("     --->drawing " + theField.textWidth + ":" + theField.textHeight + "\n\n");
+				//trace("     --->drawing " + theField.textWidth + ":" + theField.textHeight + "\n\n");
 				var bData:BitmapData = new BitmapData(theField.textWidth, theField.textHeight, true, 0x00000000);
 				bData.draw(theField, null, null, null, null, true);
 				var bmap:Bitmap = new Bitmap(bData); 

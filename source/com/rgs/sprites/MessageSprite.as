@@ -3,6 +3,7 @@ package com.rgs.sprites
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Cubic;
 	import com.greensock.text.SplitTextField;
+	import com.rgs.utils.SoundManager;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -100,6 +101,8 @@ package com.rgs.sprites
 			TweenMax.to(this, 4*ARRIVE_MULTIPLIER, { delay: 1, glowFilter:{ strength: 0, blurX: 0, blurY: 0} });
 			TweenMax.to(this, 2*ARRIVE_MULTIPLIER, { delay: 2, dropShadowFilter:{alpha: .9, strength: 15, blurX: 4, blurY:4} }); 
 			
+			SoundManager.getInstance().playSound(SoundManager.ARRIVAL_SOUNDS);
+			
 			
 		}
 		
@@ -110,6 +113,8 @@ package com.rgs.sprites
 			TweenMax.to(this, 1*DEPART_MULTIPLIER, { delay: .5, autoAlpha: 0, onComplete: recycle });
 			TweenMax.to(this, 1*DEPART_MULTIPLIER, { scaleX: 4, scaleY: .15, ease:Cubic.easeOut });
 			TweenMax.to(this, 1*DEPART_MULTIPLIER, { glowFilter:{strength: 8, blurX: 15, blurY: 15} });
+			
+			SoundManager.getInstance().playSound(SoundManager.DEPARTURE_SOUNDS);
 			
 		}
 		

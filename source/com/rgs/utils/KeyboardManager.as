@@ -14,6 +14,7 @@ package com.rgs.utils
 		public var ringSignal							: Signal;
 		public var invaderSignal						: Signal;
 		public var killSignal							: Signal;
+		public var soundSignal							: Signal;
 		
 		public function KeyboardManager(name:String="KeyboardManager")
 		{
@@ -24,6 +25,7 @@ package com.rgs.utils
 				ringSignal = new Signal();
 				invaderSignal = new Signal();
 				killSignal = new Signal();
+				soundSignal = new Signal();
 				if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 			}
 		}
@@ -58,6 +60,10 @@ package com.rgs.utils
 				
 				case 75 : // k - kill random sprite
 					killSignal.dispatch();
+					break;
+				
+				case 83 : // s - toggle sounds
+					soundSignal.dispatch();
 					break;
 				
 				default :

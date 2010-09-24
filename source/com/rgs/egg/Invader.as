@@ -3,6 +3,7 @@ package com.rgs.egg
 	import com.greensock.TweenMax;
 	import com.greensock.easing.*;
 	import com.rgs.egg.*;
+	import com.rgs.utils.SoundManager;
 	
 	import flash.display.BlendMode;
 	import flash.display.MovieClip;
@@ -47,11 +48,12 @@ package com.rgs.egg
 		public function invade():void
 		{	
 			
+			
 			if (invaders.length > 0)
 			{
 				
 				theInvader = invaders.shift();
-				
+				SoundManager.getInstance().playSound(SoundManager.INVADER_SOUNDS, 4);
 				leftSide = Boolean(Math.round(Math.random()));
 				
 				if (leftSide)

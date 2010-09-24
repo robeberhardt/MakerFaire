@@ -23,6 +23,9 @@ package com.rgs.txt
 		private var status								: String;
 		private var path								: String;
 		
+		
+		public var progressSignal						: Signal;
+		
 		private var pollTimer							: Timer;
 		
 		
@@ -63,6 +66,7 @@ package com.rgs.txt
 		{
 			loadedSignal = new Signal();
 			updateSignal = new Signal();
+			progressSignal = new Signal(Number);
 			
 			messageArray = new Array();
 			for (var i:int = 0; i < MAX_MESSAGES; i++)
@@ -81,12 +85,17 @@ package com.rgs.txt
 			this.path = path;
 			
 			status = NOT_LOADED_STATUS;
-			loader = new XMLLoader(path, { onComplete: loadComplete, onError: loadError });
-			
+			loader = new XMLLoader(path, { onComplete: loadComplete, onError: loadError, onProgress: progressHandler });
+			loader.auditSize();
 			pollTimer = new Timer(POLL_INTERVAL*1000);
 			pollTimer.addEventListener(TimerEvent.TIMER, onPollTimer);
 			pollTimer.start();
 			
+		}
+		
+		private function progressHandler(e:LoaderEvent):void
+		{
+			progressSignal.dispatch(e.target.progress);
 		}
 		
 		private function onPollTimer(e:TimerEvent):void

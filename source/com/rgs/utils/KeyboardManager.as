@@ -16,6 +16,8 @@ package com.rgs.utils
 		public var killSignal							: Signal;
 		public var soundSignal							: Signal;
 		public var frameSignal							: Signal;
+		public var randomPositionsSignal				: Signal;
+		public var originalPositionsSignal				: Signal;
 		
 		public function KeyboardManager(name:String="KeyboardManager")
 		{
@@ -28,6 +30,8 @@ package com.rgs.utils
 				killSignal = new Signal();
 				soundSignal = new Signal();
 				frameSignal = new Signal();
+				randomPositionsSignal = new Signal();
+				originalPositionsSignal = new Signal();
 				if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 			}
 		}
@@ -70,6 +74,14 @@ package com.rgs.utils
 				
 				case 70 : // f - switch frame
 					frameSignal.dispatch();
+					break;
+				
+				case 79 : // o - original positions
+					originalPositionsSignal.dispatch();
+					break;
+				
+				case 80 : // p - random positions
+					randomPositionsSignal.dispatch();
 					break;
 				
 				default :

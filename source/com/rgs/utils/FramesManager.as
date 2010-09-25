@@ -1,4 +1,4 @@
-package com.rgs
+package com.rgs.utils
 {
 	import com.rgs.FramesClip;
 	

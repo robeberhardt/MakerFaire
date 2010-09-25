@@ -12,7 +12,8 @@ package com.rgs.rings
 		private var radius : Number;
 		private var speed : Number;
 		private var scale : Number;
-		
+		private var _position : Point;
+		private var _origScale : Number;
 		private var ringSprite : Sprite;
 		
 		private var _index : uint;
@@ -29,6 +30,7 @@ package com.rgs.rings
 			trace("creating ring with " + radius + ", " + scale);
 			this.radius = radius;
 			this.speed = speed;
+			origScale = scale;
 			this.scale = this.scaleX = this.scaleY = scale;
 			connectorArray = new Array();
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
@@ -52,7 +54,7 @@ package com.rgs.rings
 			
 			for (var i:int = 0; i < NUMBER_OF_CONNECTORS; i++)
 			{
-				var c:Connector = new Connector(10, 0xff0000);
+				var c:Connector = new Connector(4, 0xff0000);
 				addChild(c);
 				c.alpha = 1;
 				c.index = i;
@@ -141,6 +143,24 @@ package com.rgs.rings
 			{
 				c.show();
 			}
+		}
+		
+		public function get origScale():Number
+		{
+			return _origScale;
+		}
+		
+		public function set origScale(val:Number):void
+		{
+			_origScale = val;
+			scaleX = scaleY = val;
+		}
+		
+		public function set position(val:Point)
+		{
+			_position = val;
+			x = _position.x;
+			y = _position.y;
 		}
 
 	}

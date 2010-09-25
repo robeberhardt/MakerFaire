@@ -75,6 +75,26 @@ package com.rgs.rings
 			return connector;
 		}
 		
+		public function randomPositions():void
+		{
+			for each (var r:Ring in ringArray)
+			{
+				r.x = Math.round(Math.random()*stage.stageWidth)-Math.round(Math.random()*stage.stageWidth * .5);
+				r.y = Math.round(Math.random()*stage.stageHeight)-Math.round(Math.random()*stage.stageHeight * .5);
+				r.scaleX = r.scaleY = 1;
+			}
+		}
+		
+		public function originalPositions():void
+		{
+			for each (var r:Ring in ringArray)
+			{
+				r.x = 0;
+				r.y = 0;
+				r.scaleX = r.scaleY = r.origScale;
+			}
+		}
+		
 		public function killRandomSprite():void
 		{
 			trace("killing random sprite");

@@ -15,6 +15,7 @@ package com.rgs.utils
 		public var invaderSignal						: Signal;
 		public var killSignal							: Signal;
 		public var soundSignal							: Signal;
+		public var frameSignal							: Signal;
 		
 		public function KeyboardManager(name:String="KeyboardManager")
 		{
@@ -26,6 +27,7 @@ package com.rgs.utils
 				invaderSignal = new Signal();
 				killSignal = new Signal();
 				soundSignal = new Signal();
+				frameSignal = new Signal();
 				if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 			}
 		}
@@ -64,6 +66,10 @@ package com.rgs.utils
 				
 				case 83 : // s - toggle sounds
 					soundSignal.dispatch();
+					break;
+				
+				case 70 : // f - switch frame
+					frameSignal.dispatch();
 					break;
 				
 				default :

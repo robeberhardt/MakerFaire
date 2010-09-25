@@ -11,19 +11,25 @@ package com.rgs.rings
 	public class RingMaster extends Sprite
 	{
 		
-		private var count : uint = 5;
+		private var count : uint = 9;
 		private var ringArray : Array;
-		private var offset : Number = .2;
+		private var offset : Number = .1;
 		private var speed : Number = .001;
-		private var radius : Number = 300;
+		private var radius : Number = 400;
 		public var availableConnectors : Array;
 		public var usedConnectors : Array;
 		public var doneKillingSignal : Signal;
 		public var ringsVisible : Boolean;
+		private var ringsMode : int;
+		
+		public var killSpecificSpriteSignal : Signal;
 		
 		public function RingMaster()
 		{
 			ringsVisible = false;
+			ringsMode = 0;
+			killSpecificSpriteSignal = new Signal(MessageSprite);
+			
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 		}
 		
@@ -34,11 +40,13 @@ package com.rgs.rings
 			{
 				var rSpeed:Number = speed;
 				if (i % 2 != 0) { rSpeed = -rSpeed; }
-				var ring:Ring = new Ring(radius, 1 - (offset * i), rSpeed);
+				var ring:Ring = new Ring(radius - (i*30), .9 - (i*.05), rSpeed);
 				ring.index = i;
 				addChild(ring);
 				ringArray.push(ring);
 				ring.hideRing();
+				ring.hideConnectors();
+				trace("creating " + ring);
 			}
 			
 			usedConnectors = new Array();
@@ -63,7 +71,7 @@ package com.rgs.rings
 		
 			var connector:Connector = Ring(ringArray[pickValue[0]]).getConnectorByIndex(pickValue[1]);
 			
-			
+			trace("got random connector - " + connector);
 			return connector;
 		}
 		
@@ -79,6 +87,11 @@ package com.rgs.rings
 			var connector:Connector = Ring(ringArray[killPickValue[0]]).getConnectorByIndex(killPickValue[1]);
 			MessageSprite(connector.passenger).depart();
 			doneKillingSignal.dispatch();
+		}
+		
+		public function killSpecificSprite(which:MessageSprite):void
+		{
+			trace("parent of " + which + " is " + which.parent);
 		}
 		
 		public function getRingByIndex(val:uint):Ring
@@ -98,21 +111,31 @@ package com.rgs.rings
 		
 		public function toggleRings():void
 		{
-			if (ringsVisible) 
+			trace("RINGSMODE:  " + ringsMode);
+			if (ringsMode == 0) 
 			{
-				ringsVisible = false;
 				for (var i:int = 0; i<ringArray.length; i++)
-				{
-					Ring(ringArray[i]).hideRing();
-				}
-			}
-			else
-			{
-				ringsVisible = true;
-				for (i = 0; i<ringArray.length; i++)
 				{
 					Ring(ringArray[i]).showRing();
 				}
+				ringsMode = 1;
+			}
+			else if (ringsMode == 1)
+			{
+				for (i = 0; i<ringArray.length; i++)
+				{
+					Ring(ringArray[i]).showConnectors();
+				}
+				ringsMode = 2;
+			}
+			else if (ringsMode == 2)
+			{
+				for (i = 0; i<ringArray.length; i++)
+				{
+					Ring(ringArray[i]).hideRing();
+					Ring(ringArray[i]).hideConnectors();
+				}
+				ringsMode = 0;
 			}
 		}
 	}

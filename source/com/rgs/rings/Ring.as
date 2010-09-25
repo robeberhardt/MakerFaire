@@ -26,6 +26,7 @@ package com.rgs.rings
 		
 		public function Ring(radius:Number, scale:Number, speed:Number)
 		{
+			trace("creating ring with " + radius + ", " + scale);
 			this.radius = radius;
 			this.speed = speed;
 			this.scale = this.scaleX = this.scaleY = scale;
@@ -45,12 +46,13 @@ package com.rgs.rings
 			ringSprite = new Sprite();
 			addChild(ringSprite);
 			
-			ringSprite.graphics.lineStyle(1.5, 0xffffff, .2, false);
+			ringSprite.graphics.lineStyle(2, 0xffffff, .5, false);
+			
 			ringSprite.graphics.drawCircle(0, 0, radius);
 			
 			for (var i:int = 0; i < NUMBER_OF_CONNECTORS; i++)
 			{
-				var c:Connector = new Connector(10, Math.random()*0xffffff);
+				var c:Connector = new Connector(10, 0xff0000);
 				addChild(c);
 				c.alpha = 1;
 				c.index = i;
@@ -116,11 +118,29 @@ package com.rgs.rings
 		public function hideRing():void
 		{
 			TweenMax.to(ringSprite, 1, { alpha: 0 });
+			
+		}
+		
+		public function hideConnectors():void
+		{
+			for each (var c:Connector in connectorArray)
+			{
+				c.hide();
+			}
 		}
 		
 		public function showRing():void
 		{
 			TweenMax.to(ringSprite, 1, { alpha: 1 });
+			
+		}
+		
+		public function showConnectors():void
+		{
+			for each (var c:Connector in connectorArray)
+			{
+				c.show();
+			}
 		}
 
 	}

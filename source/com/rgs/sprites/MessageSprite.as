@@ -3,10 +3,13 @@ package com.rgs.sprites
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Cubic;
 	import com.greensock.text.SplitTextField;
+	import com.rgs.rings.Connector;
 	import com.rgs.utils.SoundManager;
 	
+	import flash.display.BlendMode;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.filters.BlurFilter;
 	import flash.filters.DropShadowFilter;
 	import flash.filters.GlowFilter;
@@ -25,6 +28,9 @@ package com.rgs.sprites
 		private var _busy						: Boolean;
 		public var recycleSignal				: Signal;
 		public var busySignal					: Signal;
+		public var connectedTo					: Connector;
+		public var killMeNowSignal				: Signal;
+		
 		
 		private static const FULL_SCALE			: Number = 4;
 		private static const ARRIVE_MULTIPLIER	: Number = .5;
@@ -39,12 +45,15 @@ package com.rgs.sprites
 			busy = false;
 			recycleSignal = new Signal(MessageSprite);
 			busySignal = new Signal(MessageSprite);
+			killMeNowSignal = new Signal(MessageSprite);
+			
 			if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 		}
 		
 		public function init(e:Event=null):void
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
+			
 			
 			glow = new GlowFilter(0xffffff, 1, 15, 15, 5, 5);
 			//blackGlow = new GlowFilter(0x000000, 0, 0, 5, 0, 0);
@@ -54,9 +63,9 @@ package com.rgs.sprites
 			if (_stf) { addChild(_stf); }
 			
 			// registration dot
-			graphics.beginFill(0x00FF00, 0);
-			graphics.drawCircle(0, 0, 10);
-			graphics.endFill();
+//			graphics.beginFill(0x00FF00, 0);
+//			graphics.drawCircle(0, 0, 10);
+//			graphics.endFill();
 		}
 		
 		override public function toString():String
@@ -103,6 +112,8 @@ package com.rgs.sprites
 			
 			SoundManager.getInstance().playSound(SoundManager.ARRIVAL_SOUNDS);
 			
+			addEventListener(MouseEvent.CLICK, killMeNow);
+			
 			
 		}
 		
@@ -114,8 +125,15 @@ package com.rgs.sprites
 			TweenMax.to(this, 1*DEPART_MULTIPLIER, { scaleX: 4, scaleY: .15, ease:Cubic.easeOut });
 			TweenMax.to(this, 1*DEPART_MULTIPLIER, { glowFilter:{strength: 8, blurX: 15, blurY: 15} });
 			
-			SoundManager.getInstance().playSound(SoundManager.DEPARTURE_SOUNDS);
+			SoundManager.getInstance().playSound(SoundManager.DEPARTURE_SOUNDS, 0, .25);
 			
+			removeEventListener(MouseEvent.CLICK, killMeNow);
+			
+		}
+		
+		private function killMeNow(e:MouseEvent):void
+		{
+			killMeNowSignal.dispatch(this);
 		}
 		
 		private function recycle():void
@@ -147,7 +165,8 @@ package com.rgs.sprites
 				busySignal.dispatch(this);
 			}
 		}
-
+		
+		
 
 	}
 }

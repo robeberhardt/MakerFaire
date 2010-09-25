@@ -19,7 +19,8 @@ package com.rgs.rings
 		private var _angle : Number;
 		private var _scale : Number;
 		private var _ring : Ring;
-		public var passenger : MessageSprite;
+		private var _passenger : MessageSprite;
+		private var dot	: Sprite;
 	
 		
 		public function Connector(radius:Number=40, fillcolor:uint=0xff0000)
@@ -35,10 +36,14 @@ package com.rgs.rings
 		}
 		
 		public function init(e:Event=null):void {
-			// registration dot
-			graphics.beginFill(fillcolor, 0);
-			graphics.drawCircle(0, 0, radius);
-			graphics.endFill();
+			removeEventListener(Event.ADDED_TO_STAGE, init);
+			
+			dot = new Sprite();
+			addChild(dot);
+			
+			dot.graphics.beginFill(fillcolor, 1);
+			dot.graphics.drawCircle(0, 0, radius);
+			dot.graphics.endFill();
 			
 			
 		}
@@ -109,5 +114,32 @@ package com.rgs.rings
 			
 			_index = value;
 		}
+		
+		public function hide():void
+		{
+			TweenMax.to(dot, 1, { alpha: 0 });
+		}
+		
+		public function show():void
+		{
+			TweenMax.to(dot, 1, { alpha: 1 });
+		}
+
+		public function get passenger():MessageSprite
+		{
+			return _passenger;
+		}
+
+		public function set passenger(value:MessageSprite):void
+		{
+			_passenger = value;
+			//_passenger.killMeNowSignal.add(onKillPassenger);
+		}
+		
+		public function onKillPassenger(which:MessageSprite):void
+		{
+			
+		}
+
 	}
 }

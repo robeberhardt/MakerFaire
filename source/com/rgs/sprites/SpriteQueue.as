@@ -26,7 +26,7 @@ package com.rgs.sprites
 		public var emptySignal						: Signal;
 		
 		// remember that this has to be at least 3 more than 6 * the number of rings!!!
-		private static const MAX_SPRITES	: int = 50;
+		private static const MAX_SPRITES	: int = 70;
 		
 		public function SpriteQueue(name:String="SpriteManager")
 		{

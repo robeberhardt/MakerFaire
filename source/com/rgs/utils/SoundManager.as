@@ -70,25 +70,25 @@ package com.rgs.utils
 			invaderSounds.push(new invadersound4());
 			
 			arrivalSounds = new Array();
-			arrivalSounds.push(new arrival1());
+			//arrivalSounds.push(new arrival1());
 			arrivalSounds.push(new arrival2());
 			arrivalSounds.push(new arrival3());
 			arrivalSounds.push(new arrival4());
 			arrivalSounds.push(new arrival5());
 			
 			departureSounds = new Array();
-			departureSounds.push(new depart1());
-			departureSounds.push(new depart2());
+			departureSounds.push(new hookup1());
+			//departureSounds.push(new depart2());
 			
 			explosionSounds = new Array();
 			explosionSounds.push(new explode1());
 			
 			hookupSounds = new Array();
-			hookupSounds.push(new hookup1());
+			//hookupSounds.push(new hookup1());
 			hookupSounds.push(new hookup2());
-			hookupSounds.push(new hookup3());
-			hookupSounds.push(new hookup4());
-			hookupSounds.push(new hookup5());
+			//hookupSounds.push(new hookup3());
+			//hookupSounds.push(new hookup4());
+			//hookupSounds.push(new hookup5());
 			
 		}
 		

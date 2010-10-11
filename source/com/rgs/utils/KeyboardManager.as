@@ -18,6 +18,7 @@ package com.rgs.utils
 		public var frameSignal							: Signal;
 		public var randomPositionsSignal				: Signal;
 		public var originalPositionsSignal				: Signal;
+		public var tweenAllSignal				: Signal;
 		
 		public function KeyboardManager(name:String="KeyboardManager")
 		{
@@ -32,6 +33,7 @@ package com.rgs.utils
 				frameSignal = new Signal();
 				randomPositionsSignal = new Signal();
 				originalPositionsSignal = new Signal();
+				tweenAllSignal = new Signal();
 				if (stage) { init(); } else { addEventListener(Event.ADDED_TO_STAGE, init); }
 			}
 		}
@@ -82,6 +84,10 @@ package com.rgs.utils
 				
 				case 80 : // p - random positions
 					randomPositionsSignal.dispatch();
+					break;
+				
+				case 84 : // t - tweenAllRings mode toggler
+					tweenAllSignal.dispatch();
 					break;
 				
 				default :
